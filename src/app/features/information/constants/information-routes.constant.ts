@@ -1,4 +1,4 @@
 export const InformationRoutes = {
-    Page: 'information',
+    Root: 'information',
     PageId: 'id'
 }
