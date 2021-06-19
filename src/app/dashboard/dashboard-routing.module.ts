@@ -5,7 +5,7 @@ import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.co
 
 const routes = [
   {
-    path: '/',
+    path: '',
     component: DashboardPageComponent
   }
 ]
