@@ -7,15 +7,15 @@ import { InformationRoutes } from './features/information/constants/information-
 const routes: Routes = [
     {
         path: InformationRoutes.Root,
-        loadChildren: () => import('./features/information/information.module').then(m => m.InformationModule)
+        loadChildren: () => import('./features/information/information.module').then((m) => m.InformationModule)
     },
     {
         path: DashboardRoutes.Root,
-        loadChildren: () => import('./features/dashboard/dashboard.module').then(m => m.DashboardModule)
+        loadChildren: () => import('./features/dashboard/dashboard.module').then((m) => m.DashboardModule)
     },
     {
         path: AuthRoutes.Root,
-        loadChildren: () => import('./features/auth/auth.module').then(m => m.AuthModule)
+        loadChildren: () => import('./features/auth/auth.module').then((m) => m.AuthModule)
     },
     {
         path: '',

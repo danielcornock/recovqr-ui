@@ -16,6 +16,8 @@
       },
       "extends": [
         "plugin:@angular-eslint/recommended",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
@@ -48,6 +50,47 @@
             }
           }
         ],
+        "@typescript-eslint/member-ordering": ["error", {
+          "default": [
+            "signature",
+
+            "public-static-field",
+            "protected-static-field",
+            "private-static-field",
+
+            "public-decorated-field",
+            "protected-decorated-field",
+            "private-decorated-field",
+
+            "public-instance-field",
+            "protected-instance-field",
+            "private-instance-field",
+
+            "public-abstract-field",
+            "protected-abstract-field",
+            "private-abstract-field",
+          
+            "public-constructor",
+            "protected-constructor",
+            "private-constructor",
+          
+            "public-static-method",
+            "protected-static-method",
+            "private-static-method",
+
+            "public-decorated-method",
+            "protected-decorated-method",
+            "private-decorated-method",
+
+            "public-instance-method",
+            "protected-instance-method",
+            "private-instance-method",
+
+            "public-abstract-method",
+            "protected-abstract-method",
+            "private-abstract-method"
+          ]
+        }],
         "indent": ["error", 4],
         "comma-dangle": ["error"],
         "no-multi-spaces": "error",
