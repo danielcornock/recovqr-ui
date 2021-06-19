@@ -57,6 +57,7 @@
         "object-curly-spacing": ["error", "always"],
         "space-infix-ops": "error",
         "padded-blocks": ["error", "never"],
+        "semi": ["error", "always"],
         "max-len": ["error", {
           "code": 120,
           "ignorePattern": "^import\\s.+\\sfrom\\s.+;$",

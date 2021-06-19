@@ -9,7 +9,7 @@ const routes: Routes = [
         path: `:${InformationRoutes.PageId}`,
         component: InformationPageComponent
     }
-]
+];
 
 @NgModule({
     declarations: [],
