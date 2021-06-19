@@ -1,5 +1,13 @@
-$color-primary: #3d315b;
-$color-secondary-light: #444b6e;
-$color-accent: #708B75;
-$color-accent-light: #9AB87A;
-$color-tertiary: #F8F991;
+@use '~@angular/material' as mat;
+@import '../../core/material-variables';
+
+/* Initial theme colours - potentially re-enable once setup */
+// $color-primary: #3d315b;
+// $color-secondary-light: #444b6e;
+// $color-accent: #708B75;
+// $color-accent-light: #9AB87A;
+// $color-tertiary: #F8F991;
+
+$color-primary: mat.get-color-from-palette($recovqr-primary);
+$color-accent: mat.get-color-from-palette($recovqr-accent);
+$color-warn: mat.get-color-from-palette($recovqr-warn);

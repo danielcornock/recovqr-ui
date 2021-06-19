@@ -1,0 +1,16 @@
+@use '~@angular/material' as mat;
+
+/* This is a core SCSS module, but is also imported in to the theme folder in order to utilise the variables */
+
+$recovqr-primary: mat.define-palette(mat.$indigo-palette);
+$recovqr-accent: mat.define-palette(mat.$teal-palette, A200, A100, A400);
+
+$recovqr-warn: mat.define-palette(mat.$red-palette);
+
+$recovqr-theme: mat.define-light-theme((
+  color: (
+    primary: $recovqr-primary,
+    accent: $recovqr-accent,
+    warn: $recovqr-warn,
+  )
+));

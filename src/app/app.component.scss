@@ -1,0 +1,7 @@
+@import 'src/scss/theme';
+
+.app {
+    &__container {
+        background-color: $color-primary;
+    }
+}
