@@ -6,22 +6,22 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 
 const routes: Routes = [
-  {
-    path: AuthRoutes.Login,
-    component: LoginPageComponent
-  },
-  {
-    path: AuthRoutes.Register,
-    component: RegisterPageComponent
-  }
+    {
+        path: AuthRoutes.Login,
+        component: LoginPageComponent
+    },
+    {
+        path: AuthRoutes.Register,
+        component: RegisterPageComponent
+    }
 ];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes)
-  ],
-  exports: [RouterModule]
+    declarations: [],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes)
+    ],
+    exports: [RouterModule]
 })
 export class AuthRoutingModule { }
