@@ -9,13 +9,16 @@
         "@schematics/angular:component": {
           "style": "scss"
         },
+        "@schematics/angular:service": {
+          "flat": false
+        },
         "@schematics/angular:application": {
           "strict": true
         }
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "rqr",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
