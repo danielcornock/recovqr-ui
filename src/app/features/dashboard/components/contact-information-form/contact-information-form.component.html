@@ -1,0 +1,21 @@
+<form class="contact-information-form__container" [formGroup]="form">
+    <mat-form-field>
+        <mat-label>{{ 'INFO_FORM.NAME' | translate }}</mat-label>
+        <input type="text" matInput formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>{{ 'INFO_FORM.PHONE' | translate }}</mat-label>
+        <input type="text" matInput formControlName="phone">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>{{ 'INFO_FORM.EMAIL' | translate }}</mat-label>
+        <input type="text" matInput formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>{{ 'INFO_FORM.COUNTRY' | translate }}</mat-label>
+        <input type="text" matInput formControlName="country">
+    </mat-form-field>
+</form>
