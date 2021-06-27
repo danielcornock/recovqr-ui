@@ -1,5 +1,5 @@
 export const AuthRoutes = {
-    Root: 'auth',
-    Login: 'login',
-    Register: 'register'
+  Root: 'auth',
+  Login: 'login',
+  Register: 'register'
 };

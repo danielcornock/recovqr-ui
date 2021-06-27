@@ -5,22 +5,22 @@ import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/mat
 import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
-    declarations: [],
-    imports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MatInputModule,
-        MatFormFieldModule
-    ],
-    exports: [
-        FormsModule,
-        ReactiveFormsModule,
-        MatInputModule,
-        MatFormFieldModule
-    ],
-    providers: [
-        { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } }
-    ]
+  declarations: [],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule
+  ],
+  exports: [
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule
+  ],
+  providers: [
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } }
+  ]
 })
 export class AppFormsModule { }

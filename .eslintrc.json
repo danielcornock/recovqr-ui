@@ -25,7 +25,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "rqr",
+            "prefix": "app",
             "style": "camelCase"
           }
         ],
@@ -33,7 +33,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "rqr",
+            "prefix": "app",
             "style": "kebab-case"
           }
         ],
@@ -91,7 +91,7 @@
             "private-abstract-method"
           ]
         }],
-        "@typescript-eslint/indent": ["error", 4],
+        "@typescript-eslint/indent": ["error", 2],
         "comma-dangle": ["error"],
         "no-multi-spaces": "error",
         "space-before-blocks": "error",

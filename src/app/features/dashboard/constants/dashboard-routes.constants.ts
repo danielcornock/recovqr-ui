@@ -1,3 +1,3 @@
 export const DashboardRoutes = {
-    Root: 'dashboard'
+  Root: 'dashboard'
 };

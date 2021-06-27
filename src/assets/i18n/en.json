@@ -1,5 +1,11 @@
 {
     "DASHBOARD": {
         "HEADER": "Dashboard"
+    },
+    "INFO_FORM": {
+        "NAME": "Full name",
+        "COUNTRY": "Country",
+        "PHONE": "Telephone number",
+        "EMAIL": "Email address"
     }
 }

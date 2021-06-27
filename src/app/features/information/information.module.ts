@@ -5,13 +5,13 @@ import { InformationRoutingModule } from './information-routing.module';
 import { InformationPageComponent } from './pages/information-page/information-page.component';
 
 @NgModule({
-    declarations: [
-        InformationPageComponent
-    ],
-    imports: [
-        CommonModule,
-        InformationRoutingModule,
-        AppCommonModule
-    ]
+  declarations: [
+    InformationPageComponent
+  ],
+  imports: [
+    CommonModule,
+    InformationRoutingModule,
+    AppCommonModule
+  ]
 })
 export class InformationModule { }

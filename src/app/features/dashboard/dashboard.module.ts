@@ -7,15 +7,15 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 
 @NgModule({
-    declarations: [
-        DashboardPageComponent,
-        ContactInformationFormComponent
-    ],
-    imports: [
-        CommonModule,
-        DashboardRoutingModule,
-        AppCommonModule,
-        AppFormsModule
-    ]
+  declarations: [
+    DashboardPageComponent,
+    ContactInformationFormComponent
+  ],
+  imports: [
+    CommonModule,
+    DashboardRoutingModule,
+    AppCommonModule,
+    AppFormsModule
+  ]
 })
 export class DashboardModule { }

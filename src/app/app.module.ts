@@ -5,15 +5,15 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 
 @NgModule({
-    declarations: [
-        AppComponent
-    ],
-    imports: [
-        BrowserAnimationsModule,
-        AppRoutingModule,
-        CoreModule
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    CoreModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
