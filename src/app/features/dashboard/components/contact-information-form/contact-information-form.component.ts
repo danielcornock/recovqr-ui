@@ -16,11 +16,11 @@ export class ContactInformationFormComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) { }
 
   public ngOnInit(): void {
-	    this.form = this.formBuilder.group({
-	        name: [''],
-	        country: [''],
-	        phone: [''],
-	        email: ['']
-	    });
+    this.form = this.formBuilder.group({
+      name: [''],
+      country: [''],
+      phone: [''],
+      email: ['']
+    });
   }
 }
