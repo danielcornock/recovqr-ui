@@ -1,4 +1,5 @@
 @import 'src/scss/core';
+@import 'src/scss/globals';
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -10,4 +11,9 @@ body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 1.6rem;
+}
+
+html {
+    font-size: 10px;
 }

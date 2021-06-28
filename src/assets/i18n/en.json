@@ -7,5 +7,16 @@
         "COUNTRY": "Country",
         "PHONE": "Telephone number",
         "EMAIL": "Email address"
+    },
+    "AUTH": {
+        "NAME": "Name",
+        "EMAIL": "Email",
+        "PASSWORD": "Password",
+        "SIGN_UP": "Sign up",
+        "REGISTER_HEADING": "Create an account"
+    },
+    "VALIDATION_ERRORS": {
+        "REQUIRED": "This field is required",
+        "FALLBACK": "Invalid field"
     }
 }

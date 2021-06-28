@@ -11,6 +11,10 @@
 // $color-accent-light: #9AB87A;
 // $color-tertiary: #F8F991;
 
-$color-primary: mat.get-color-from-palette($recovqr-primary);
+$color-primary: mat.get-color-from-palette($recovqr-primary, 800);
 $color-accent: mat.get-color-from-palette($recovqr-accent);
 $color-warn: mat.get-color-from-palette($recovqr-warn);
+
+$color-accent-hover: mat.get-color-from-palette($recovqr-accent, 600);
+
+$color-text-on-accent: white;

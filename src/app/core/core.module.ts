@@ -3,6 +3,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoaderFactory } from './factories/translate-http-loader.factory';
+import { ApiUrlProvider } from './providers/api-url.provider';
 
 @NgModule({
   declarations: [],
@@ -17,6 +18,9 @@ import { TranslateHttpLoaderFactory } from './factories/translate-http-loader.fa
         deps: [HttpClient]
       }
     })
+  ],
+  providers: [
+    ApiUrlProvider
   ]
 })
 export class CoreModule { }
