@@ -6,21 +6,21 @@
         <mat-form-field>
             <mat-label>{{ 'AUTH.NAME' | translate }}</mat-label>
             <input type="text" matInput formControlName="name">
-            <mat-error *ngIf="form.controls.name.touched && form.controls.name.invalid">
+            <mat-error *ngIf="form.controls.name.invalid">
                 {{ form.controls.name.errors | formErrors | translate }}
             </mat-error>
         </mat-form-field>
         <mat-form-field>
             <mat-label>{{ 'AUTH.EMAIL' | translate }}</mat-label>
             <input type="text" matInput formControlName="email">
-            <mat-error *ngIf="form.controls.email.touched && form.controls.email.invalid">
+            <mat-error *ngIf="form.controls.email.invalid">
                 {{ form.controls.email.errors | formErrors | translate }}
             </mat-error>
         </mat-form-field>
         <mat-form-field>
             <mat-label>{{ 'AUTH.PASSWORD' | translate }}</mat-label>
             <input type="text" matInput formControlName="password">
-            <mat-error *ngIf="form.controls.password.touched && form.controls.password.invalid">
+            <mat-error *ngIf="form.controls.password.invalid">
                 {{ form.controls.password.errors | formErrors | translate }}
             </mat-error>
         </mat-form-field>

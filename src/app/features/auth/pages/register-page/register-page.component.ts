@@ -24,6 +24,10 @@ export class RegisterPageComponent implements OnInit {
   }
 
   public register(): void {
+    if (this.form.invalid) {
+      return;
+    }
+
     this.authApiService.register(this.form.value).subscribe((response) => {
       console.log(response);
     });
