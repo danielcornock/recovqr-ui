@@ -19,7 +19,7 @@
         </mat-form-field>
         <mat-form-field>
             <mat-label>{{ 'AUTH.PASSWORD' | translate }}</mat-label>
-            <input type="text" matInput formControlName="password">
+            <input type="password" matInput formControlName="password">
             <mat-error *ngIf="form.controls.password.invalid">
                 {{ form.controls.password.errors | formErrors | translate }}
             </mat-error>

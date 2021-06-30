@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthApiService } from '../../services/auth-api/auth-api.service';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/core/modules/authentication/services/auth/auth.service';
+import { DashboardRoutes } from 'src/app/features/dashboard/constants/dashboard-routes.constants';
 
 @Component({
   selector: 'app-register-page',
@@ -12,7 +14,8 @@ export class RegisterPageComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private authApiService: AuthApiService
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   public ngOnInit(): void {
@@ -28,8 +31,8 @@ export class RegisterPageComponent implements OnInit {
       return;
     }
 
-    this.authApiService.register(this.form.value).subscribe((response) => {
-      console.log(response);
+    this.authService.register(this.form.value).subscribe(() => {
+      this.router.navigate([DashboardRoutes.Root]);
     });
   }
 }

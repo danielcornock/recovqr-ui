@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from './core/modules/authentication/services/auth/auth.service';
 import { I18nService } from './core/services/i18n/i18n.service';
 
 @Component({
@@ -7,9 +8,13 @@ import { I18nService } from './core/services/i18n/i18n.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor(private i18nService: I18nService) {}
+  constructor(
+    private i18nService: I18nService,
+    private authService: AuthService
+  ) {}
 
   public ngOnInit(): void {
     this.i18nService.initialise();
+    this.authService.initialise();
   }
 }

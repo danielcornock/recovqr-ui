@@ -3,6 +3,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoaderFactory } from './factories/translate-http-loader.factory';
+import { AuthenticationModule } from './modules/authentication/authentication.module';
 import { ApiUrlProvider } from './providers/api-url.provider';
 
 @NgModule({
@@ -10,6 +11,7 @@ import { ApiUrlProvider } from './providers/api-url.provider';
   imports: [
     CommonModule,
     HttpClientModule,
+    AuthenticationModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {
