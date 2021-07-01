@@ -5,7 +5,7 @@ import { AuthState, AuthStore } from './auth.store';
 
 @Injectable()
 export class AuthQuery extends Query<AuthState> {
-  constructor(protected store: AuthStore) {
+  constructor(store: AuthStore) {
     super(store);
   }
 

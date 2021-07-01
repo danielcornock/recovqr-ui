@@ -2,19 +2,8 @@
 
 .register-page {
     &__container {
-        background-color: $color-accent;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-    }
-
-    &__form {
         display: flex;
         flex-direction: column;
-        background-color: white;
-        padding: 3.2rem;
-        border-radius: $br-med;
         width: 100%;
         max-width: 300px;
     }

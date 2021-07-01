@@ -1,8 +1,5 @@
-<div class="register-page__container">
-    <form class="register-page__form" [formGroup]="form" (ngSubmit)="register()">
-        <h2 class="register-page__heading">
-            {{ 'AUTH.REGISTER_HEADING' | translate }}
-        </h2>
+<app-auth-page-container heading="AUTH.REGISTER_HEADING">
+    <form class="register-page__container" [formGroup]="form" (ngSubmit)="register()">
         <mat-form-field>
             <mat-label>{{ 'AUTH.NAME' | translate }}</mat-label>
             <input type="text" matInput formControlName="name">
@@ -10,6 +7,7 @@
                 {{ form.controls.name.errors | formErrors | translate }}
             </mat-error>
         </mat-form-field>
+
         <mat-form-field>
             <mat-label>{{ 'AUTH.EMAIL' | translate }}</mat-label>
             <input type="text" matInput formControlName="email">
@@ -17,6 +15,7 @@
                 {{ form.controls.email.errors | formErrors | translate }}
             </mat-error>
         </mat-form-field>
+
         <mat-form-field>
             <mat-label>{{ 'AUTH.PASSWORD' | translate }}</mat-label>
             <input type="password" matInput formControlName="password">
@@ -24,9 +23,9 @@
                 {{ form.controls.password.errors | formErrors | translate }}
             </mat-error>
         </mat-form-field>
-
+    
         <button class="u-submit-button" type="submit">
             {{ 'AUTH.SIGN_UP' | translate }}
         </button>
     </form>
-</div>
+</app-auth-page-container>

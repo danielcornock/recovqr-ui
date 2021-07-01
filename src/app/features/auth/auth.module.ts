@@ -5,11 +5,13 @@ import { AppFormsModule } from 'src/app/shared/forms/forms.module';
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { AuthPageContainerComponent } from './components/auth-page-container/auth-page-container.component';
 
 @NgModule({
   declarations: [
     LoginPageComponent,
-    RegisterPageComponent
+    RegisterPageComponent,
+    AuthPageContainerComponent
   ],
   imports: [
     CommonModule,

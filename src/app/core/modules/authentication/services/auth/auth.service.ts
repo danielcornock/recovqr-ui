@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { withTransaction } from '@datorama/akita';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { StorageKeys } from 'src/app/common/constants/storage-keys.constant';
@@ -30,9 +31,11 @@ export class AuthService {
     this.authStore.setLoading(true);
 
     return this.authApiService.register(data).pipe(
-      tap((response) => {
+      withTransaction((response) => {
         this.authStore.setAuthDetails(response);
         this.authStore.setLoading(false);
+      }),
+      tap((response) => {
         this.storageService.setObject<AuthResponse>(StorageKeys.AuthInfo, response);
       }),
       catchError((error) => {
