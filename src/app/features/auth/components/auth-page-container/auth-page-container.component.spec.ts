@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AuthPageContainerComponent } from './auth-page-container.component';
 
-
 describe('AuthPageContainerComponent', () => {
   let component: AuthPageContainerComponent;
   let fixture: ComponentFixture<AuthPageContainerComponent>;
