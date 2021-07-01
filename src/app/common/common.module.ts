@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TranslateModule } from '@ngx-translate/core';
 import { StorageService } from './services/storage/storage.service';
 
@@ -9,6 +11,10 @@ import { StorageService } from './services/storage/storage.service';
     CommonModule
   ],
   providers: [StorageService],
-  exports: [TranslateModule]
+  exports: [
+    TranslateModule,
+    MatIconModule,
+    MatProgressSpinnerModule
+  ]
 })
 export class AppCommonModule { }

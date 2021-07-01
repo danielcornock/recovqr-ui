@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { withTransaction } from '@datorama/akita';
 import { Observable, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { catchError, finalize, tap } from 'rxjs/operators';
 import { StorageKeys } from 'src/app/common/constants/storage-keys.constant';
 import { StorageService } from 'src/app/common/services/storage/storage.service';
 import { AuthApiService } from 'src/app/core/modules/authentication/services/auth-api/auth-api.service';
@@ -31,16 +30,16 @@ export class AuthService {
     this.authStore.setLoading(true);
 
     return this.authApiService.register(data).pipe(
-      withTransaction((response) => {
-        this.authStore.setAuthDetails(response);
-        this.authStore.setLoading(false);
-      }),
       tap((response) => {
         this.storageService.setObject<AuthResponse>(StorageKeys.AuthInfo, response);
+        this.authStore.setAuthDetails(response);
       }),
       catchError((error) => {
         this.authStore.setError(error);
         return throwError(error);
+      }),
+      finalize(() => {
+        this.authStore.setLoading(false);
       })
     );
   }
@@ -51,12 +50,14 @@ export class AuthService {
     return this.authApiService.login(data).pipe(
       tap((response) => {
         this.authStore.setAuthDetails(response);
-        this.authStore.setLoading(false);
         this.storageService.setObject<AuthResponse>(StorageKeys.AuthInfo, response);
       }),
       catchError((error) => {
         this.authStore.setError(error);
         return throwError(error);
+      }),
+      finalize(() => {
+        this.authStore.setLoading(false);
       })
     );
   }

@@ -13,7 +13,9 @@
         "EMAIL": "Email",
         "PASSWORD": "Password",
         "SIGN_UP": "Sign up",
-        "REGISTER_HEADING": "Create an account"
+        "REGISTER_HEADING": "Create an account",
+        "LOGIN_HEADING": "Sign in to your account",
+        "LOGIN": "Log in"
     },
     "VALIDATION_ERRORS": {
         "REQUIRED": "This field is required",

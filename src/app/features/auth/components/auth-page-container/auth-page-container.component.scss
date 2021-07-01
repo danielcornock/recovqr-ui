@@ -19,6 +19,31 @@
 
     &__heading {
         text-align: center;
+        font-weight: 400;
+        font-size: 1.6rem;
+        color: $color-body;
+    }
+
+    &__branding {
+        display: flex;
+        align-items: center;
         color: $color-accent;
+        flex-direction: column;
+        border-bottom: 1px solid $color-accent;
+        margin-bottom: 20px;
+        padding-bottom: 32px;
+    }
+
+    &__branding-icon {
+        @include icon-size(40px);
+
+        transform: rotate(45deg);
+        display: inline-block;
+        margin-bottom: 12px;
+    }
+
+    &__branding-text {
+        font-size: 30px;
+        font-weight: 300;
     }
 }

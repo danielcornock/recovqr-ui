@@ -1,4 +1,4 @@
-<app-auth-page-container heading="AUTH.REGISTER_HEADING">
+<app-auth-page-container heading="AUTH.REGISTER_HEADING" [isLoading]="isLoading$ | async">
     <form class="register-page__container" [formGroup]="form" (ngSubmit)="register()">
         <mat-form-field>
             <mat-label>{{ 'AUTH.NAME' | translate }}</mat-label>

@@ -9,4 +9,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 export class AuthPageContainerComponent {
   @Input()
   public heading: string;
+
+  @Input()
+  public isLoading: boolean | null;
 }

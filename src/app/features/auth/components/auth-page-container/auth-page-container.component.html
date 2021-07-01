@@ -1,8 +1,15 @@
 <div class="auth-page-container__container">
     <div class="auth-page-container__dialog">
+        <div class="auth-page-container__branding">
+            <mat-icon class="auth-page-container__branding-icon">qr_code_2</mat-icon>
+            <span class="auth-page-container__branding-text">recovqr</span>
+        </div>
+
         <h2 class="auth-page-container__heading">
             {{ heading | translate }}
         </h2>
         <ng-content></ng-content>
     </div>
 </div>
+
+<mat-spinner *ngIf="isLoading"></mat-spinner>

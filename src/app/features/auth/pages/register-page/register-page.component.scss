@@ -1,15 +1,8 @@
-@import 'src/scss/theme';
-
 .register-page {
     &__container {
         display: flex;
         flex-direction: column;
         width: 100%;
         max-width: 300px;
-    }
-
-    &__heading {
-        text-align: center;
-        color: $color-primary;
     }
 }
