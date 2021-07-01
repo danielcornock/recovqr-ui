@@ -28,6 +28,7 @@ export class AuthService {
 
   public register(data: RegisterPayload): Observable<AuthResponse> {
     this.authStore.setLoading(true);
+    this.authStore.setError(null);
 
     return this.authApiService.register(data).pipe(
       tap((response) => {
@@ -35,7 +36,7 @@ export class AuthService {
         this.authStore.setAuthDetails(response);
       }),
       catchError((error) => {
-        this.authStore.setError(error);
+        this.authStore.setError(error.error);
         return throwError(error);
       }),
       finalize(() => {
@@ -46,6 +47,7 @@ export class AuthService {
 
   public login(data: RegisterPayload): Observable<AuthResponse> {
     this.authStore.setLoading(true);
+    this.authStore.setError(null);
 
     return this.authApiService.login(data).pipe(
       tap((response) => {
@@ -53,7 +55,7 @@ export class AuthService {
         this.storageService.setObject<AuthResponse>(StorageKeys.AuthInfo, response);
       }),
       catchError((error) => {
-        this.authStore.setError(error);
+        this.authStore.setError(error.error);
         return throwError(error);
       }),
       finalize(() => {

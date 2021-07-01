@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { ApiErrorResponse } from 'src/app/core/interfaces/api-error-response.interface';
 import { AuthService } from 'src/app/core/modules/authentication/services/auth/auth.service';
 import { AuthQuery } from 'src/app/core/modules/authentication/store/auth.query';
 import { DashboardRoutes } from 'src/app/features/dashboard/constants/dashboard-routes.constants';
@@ -14,6 +15,7 @@ import { DashboardRoutes } from 'src/app/features/dashboard/constants/dashboard-
 export class RegisterPageComponent implements OnInit {
   public form: FormGroup;
   public isLoading$: Observable<boolean>;
+  public errors$: Observable<ApiErrorResponse>;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -24,6 +26,8 @@ export class RegisterPageComponent implements OnInit {
 
   public ngOnInit(): void {
     this.isLoading$ = this.authQuery.selectLoading();
+    this.errors$ = this.authQuery.selectError();
+
     this.form = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', Validators.required],

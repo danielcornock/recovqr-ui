@@ -1,5 +1,6 @@
 <app-auth-page-container heading="AUTH.LOGIN_HEADING" [isLoading]="(isLoading$ | async)">
     <form [formGroup]="form" class="login-page__container" (ngSubmit)="login()">
+        <app-form-error [errors]="errors$ | async"></app-form-error>
         <mat-form-field>
             <mat-label>{{ 'AUTH.EMAIL' | translate }}</mat-label>
             <input type="text" matInput formControlName="email">

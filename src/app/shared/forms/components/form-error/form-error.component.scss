@@ -1,0 +1,20 @@
+@import 'src/scss/theme';
+
+.form-error {
+    &__container {
+        background-color: $color-warn-light;
+        color: $color-warn;
+        padding: 12px;
+        font-size: 13px;
+        border-radius: $br-sm;
+        margin-bottom: 24px;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        display: inline-block;
+        margin-right: 12px;
+    }
+}
