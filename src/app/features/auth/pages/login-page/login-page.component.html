@@ -1,7 +1,8 @@
 <app-auth-page-container heading="AUTH.LOGIN_HEADING" [isLoading]="(isLoading$ | async)">
-    <form [formGroup]="form" class="login-page__container" (ngSubmit)="login()">
-        <app-form-error [errors]="errors$ | async"></app-form-error>
+    <form [formGroup]="form" class="login-page__container" (ngSubmit)="login()" [appFormInputErrorHandler]="errors$ | async">
+        <app-form-error [error]="errors$ | async"></app-form-error>
         <mat-form-field>
+            <mat-icon matPrefix>mail</mat-icon>
             <mat-label>{{ 'AUTH.EMAIL' | translate }}</mat-label>
             <input type="text" matInput formControlName="email">
             <mat-error *ngIf="form.controls.email.invalid">
@@ -10,15 +11,24 @@
         </mat-form-field>
 
         <mat-form-field>
+            <mat-icon matPrefix>lock</mat-icon>
             <mat-label>{{ 'AUTH.PASSWORD' | translate }}</mat-label>
-            <input type="password" matInput formControlName="password">
+            <input [attr.type]="showPassword ? 'input' : 'password'" matInput formControlName="password">
             <mat-error *ngIf="form.controls.password.invalid">
                 {{ form.controls.password.errors | formErrors | translate }}
             </mat-error>
+            <button mat-icon-button matSuffix type="button" color="accent" (click)="togglePasswordVisibility()">
+                <mat-icon>{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
         </mat-form-field>
     
         <button class="u-submit-button" type="submit">
-            {{ 'AUTH.SIGN_UP' | translate }}
+            {{ 'AUTH.LOGIN' | translate }}
         </button>
+
+        <p class="login-page__register">
+            {{ 'AUTH.GO_TO_REGISTER_TEXT' | translate }}
+            <button class="u-text-link" (click)="goToRegisterPage()">{{ 'AUTH.GO_TO_REGISTER_LINK' | translate }}</button>
+        </p>
     </form>
 </app-auth-page-container>

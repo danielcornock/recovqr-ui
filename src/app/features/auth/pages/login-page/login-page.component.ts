@@ -6,6 +6,7 @@ import { ApiErrorResponse } from 'src/app/core/interfaces/api-error-response.int
 import { AuthService } from 'src/app/core/modules/authentication/services/auth/auth.service';
 import { AuthQuery } from 'src/app/core/modules/authentication/store/auth.query';
 import { DashboardRoutes } from 'src/app/features/dashboard/constants/dashboard-routes.constants';
+import { AuthRoutes } from '../../constants/auth-routes.constant';
 
 @Component({
   selector: 'app-login-page',
@@ -14,6 +15,8 @@ import { DashboardRoutes } from 'src/app/features/dashboard/constants/dashboard-
 })
 export class LoginPageComponent implements OnInit {
   public form: FormGroup;
+  public showPassword = false;
+
   public isLoading$: Observable<boolean>;
   public errors$: Observable<ApiErrorResponse>;
 
@@ -41,5 +44,13 @@ export class LoginPageComponent implements OnInit {
     this.authService.login(this.form.value).subscribe(() => {
       this.router.navigate([DashboardRoutes.Root]);
     });
+  }
+
+  public togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
+
+  public goToRegisterPage(): void {
+    this.router.navigate([AuthRoutes.Root, AuthRoutes.Register]);
   }
 }

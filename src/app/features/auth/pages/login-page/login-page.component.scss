@@ -1,8 +1,16 @@
+@import 'src/scss/theme';
+
 .login-page {
     &__container {
         display: flex;
         flex-direction: column;
         width: 100%;
         max-width: 300px;
+    }
+
+    &__register {
+        color: $color-body;
+        margin-top: 32px;
+        text-align: center;
     }
 }

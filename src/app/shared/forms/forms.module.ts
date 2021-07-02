@@ -6,13 +6,15 @@ import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/mat
 import { MatInputModule } from '@angular/material/input';
 import { AppCommonModule } from 'src/app/common/common.module';
 import { FormErrorComponent } from './components/form-error/form-error.component';
+import { FormInputErrorHandlerDirective } from './directives/form-error-handler/form-input-error-handler.directive';
 import { FormErrorsPipe } from './pipes/form-errors/form-errors.pipe';
 import { CustomErrorStateMatcher } from './providers/error-state-matcher.provider';
 
 @NgModule({
   declarations: [
     FormErrorsPipe,
-    FormErrorComponent
+    FormErrorComponent,
+    FormInputErrorHandlerDirective
   ],
   imports: [
     CommonModule,
@@ -28,12 +30,12 @@ import { CustomErrorStateMatcher } from './providers/error-state-matcher.provide
     MatInputModule,
     MatFormFieldModule,
     FormErrorsPipe,
-    FormErrorComponent
+    FormErrorComponent,
+    FormInputErrorHandlerDirective
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },
     { provide: ErrorStateMatcher, useClass: CustomErrorStateMatcher }
-
   ]
 })
 export class AppFormsModule { }

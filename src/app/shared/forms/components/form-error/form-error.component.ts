@@ -9,5 +9,5 @@ import { ApiErrorResponse } from 'src/app/core/interfaces/api-error-response.int
 })
 export class FormErrorComponent {
   @Input()
-  public errors: ApiErrorResponse | null;
+  public error: ApiErrorResponse | null;
 }

@@ -2,10 +2,10 @@
 
 .form-error {
     &__container {
-        background-color: $color-warn-light;
-        color: $color-warn;
+        background-color: $color-warn;
+        color: $color-text-on-warn;
         padding: 12px;
-        font-size: 13px;
+        font-size: 12px;
         border-radius: $br-sm;
         margin-bottom: 24px;
         font-weight: 400;

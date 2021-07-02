@@ -5,9 +5,13 @@ import { FormErrors } from '../../constants/form-errors.constant';
   name: 'formErrors'
 })
 export class FormErrorsPipe implements PipeTransform {
-  public transform(errors: Record<string, unknown> | null): string {
+  public transform(errors: string | Record<string, unknown> | null): string {
     if (!errors) {
       return '';
+    }
+
+    if (typeof errors === 'string') {
+      return errors;
     }
 
     const errorKeys = Object.keys(errors);

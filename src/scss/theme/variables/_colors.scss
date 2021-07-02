@@ -13,11 +13,11 @@
 
 $color-primary: mat.get-color-from-palette($recovqr-primary, 800);
 $color-accent: mat.get-color-from-palette($recovqr-accent);
-$color-warn: mat.get-color-from-palette($recovqr-warn, 700);
+$color-warn: mat.get-color-from-palette($recovqr-warn, "A200");
 
 $color-accent-hover: mat.get-color-from-palette($recovqr-accent, 600);
-$color-warn-light: mat.get-color-from-palette($recovqr-warn, 100);
+$color-warn-light: mat.get-color-from-palette($recovqr-warn, 50);
 
 $color-text-on-accent: white;
-
+$color-text-on-warn: white;
 $color-body: #555;

@@ -6,6 +6,7 @@ import { ApiErrorResponse } from 'src/app/core/interfaces/api-error-response.int
 import { AuthService } from 'src/app/core/modules/authentication/services/auth/auth.service';
 import { AuthQuery } from 'src/app/core/modules/authentication/store/auth.query';
 import { DashboardRoutes } from 'src/app/features/dashboard/constants/dashboard-routes.constants';
+import { AuthRoutes } from '../../constants/auth-routes.constant';
 
 @Component({
   selector: 'app-register-page',
@@ -14,6 +15,8 @@ import { DashboardRoutes } from 'src/app/features/dashboard/constants/dashboard-
 })
 export class RegisterPageComponent implements OnInit {
   public form: FormGroup;
+  public showPassword = false;
+
   public isLoading$: Observable<boolean>;
   public errors$: Observable<ApiErrorResponse>;
 
@@ -30,8 +33,8 @@ export class RegisterPageComponent implements OnInit {
 
     this.form = this.formBuilder.group({
       name: ['', Validators.required],
-      email: ['', Validators.required],
-      password: ['', Validators.required]
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8)]]
     });
   }
 
@@ -43,5 +46,13 @@ export class RegisterPageComponent implements OnInit {
     this.authService.register(this.form.value).subscribe(() => {
       this.router.navigate([DashboardRoutes.Root]);
     });
+  }
+
+  public togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
+
+  public goToLoginPage(): void {
+    this.router.navigate([AuthRoutes.Root, AuthRoutes.Login]);
   }
 }

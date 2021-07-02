@@ -1,11 +1,23 @@
+@import 'src/scss/theme';
+
 mat-form-field {
     display: block;
-    margin-bottom: 0.6rem;
+    margin-bottom: 8px;
+
+    mat-icon[matPrefix] {
+        color: $color-accent;
+        margin-right: 8px;
+        margin-left: 4px;
+    }
+
+    &:last-of-type {
+        margin-bottom: 16px;
+    }
 }
 
 mat-spinner {
     position: absolute !important;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.5);
+    transform: translate(-50%, -50%) scale(0.4);
 }
