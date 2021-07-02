@@ -4,20 +4,15 @@
 @import '../../core/material-variables';
 /* stylelint-enable */
 
-/* Initial theme colours - potentially re-enable once setup */
-// $color-primary: #3d315b;
-// $color-secondary-light: #444b6e;
-// $color-accent: #708B75;
-// $color-accent-light: #9AB87A;
-// $color-tertiary: #F8F991;
+$color-primary: mat.get-color-from-palette($recovqr-primary);
+$color-primary-hover: mat.get-color-from-palette($recovqr-accent, 600);
+$color-text-on-primary: white;
 
-$color-primary: mat.get-color-from-palette($recovqr-primary, 800);
 $color-accent: mat.get-color-from-palette($recovqr-accent);
-$color-warn: mat.get-color-from-palette($recovqr-warn, "A200");
-
-$color-accent-hover: mat.get-color-from-palette($recovqr-accent, 600);
-$color-warn-light: mat.get-color-from-palette($recovqr-warn, 50);
-
 $color-text-on-accent: white;
+
+$color-warn: mat.get-color-from-palette($recovqr-warn, "A200");
+$color-warn-light: mat.get-color-from-palette($recovqr-warn, 50);
 $color-text-on-warn: white;
+
 $color-body: #555;

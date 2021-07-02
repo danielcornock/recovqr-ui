@@ -1,9 +1,9 @@
-<app-auth-page-container heading="AUTH.REGISTER_HEADING" [isLoading]="isLoading$ | async">
+<app-auth-page-container heading="AUTH.REGISTER.HEADING" [isLoading]="isLoading$ | async">
     <form class="register-page__container" [formGroup]="form" (ngSubmit)="register()" [appFormInputErrorHandler]="errors$ | async">
         <app-form-error [error]="errors$ | async"></app-form-error>
         <mat-form-field>
             <mat-icon matPrefix>person</mat-icon>
-            <mat-label>{{ 'AUTH.NAME' | translate }}</mat-label>
+            <mat-label>{{ 'AUTH.FIELDS.NAME' | translate }}</mat-label>
             <input type="text" matInput formControlName="name">
             <mat-error *ngIf="form.controls.name.invalid">
                 {{ form.controls.name.errors | formErrors | translate }}
@@ -12,7 +12,7 @@
 
         <mat-form-field>
             <mat-icon matPrefix>mail</mat-icon>
-            <mat-label>{{ 'AUTH.EMAIL' | translate }}</mat-label>
+            <mat-label>{{ 'AUTH.FIELDS.EMAIL' | translate }}</mat-label>
             <input type="text" matInput formControlName="email">
             <mat-error *ngIf="form.controls.email.invalid">
                 {{ form.controls.email.errors | formErrors | translate }}
@@ -21,7 +21,7 @@
 
         <mat-form-field>
             <mat-icon matPrefix>lock</mat-icon>
-            <mat-label>{{ 'AUTH.PASSWORD' | translate }}</mat-label>
+            <mat-label>{{ 'AUTH.FIELDS.PASSWORD' | translate }}</mat-label>
             <input [attr.type]="showPassword ? 'input' : 'password'" matInput formControlName="password">
             <mat-error *ngIf="form.controls.password.invalid">
                 {{ form.controls.password.errors | formErrors | translate }}
@@ -32,12 +32,14 @@
         </mat-form-field>
     
         <button class="u-submit-button" type="submit">
-            {{ 'AUTH.SIGN_UP' | translate }}
+            {{ 'AUTH.REGISTER.ACTION' | translate }}
         </button>
 
         <p class="register-page__login">
-            {{ 'AUTH.GO_TO_LOGIN_TEXT' | translate }}
-            <button class="u-text-link" (click)="goToLoginPage()">{{ 'AUTH.GO_TO_LOGIN_LINK' | translate }}</button>
+            {{ 'AUTH.REGISTER.GO_TO_LOGIN_TEXT' | translate }}
+            <button class="u-text-link" (click)="goToLoginPage()">
+                {{ 'AUTH.REGISTER.GO_TO_LOGIN_LINK' | translate }}
+            </button>
         </p>
     </form>
 </app-auth-page-container>

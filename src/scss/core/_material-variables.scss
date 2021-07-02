@@ -2,7 +2,7 @@
 
 /* This is a core SCSS module, but is also imported in to the theme folder in order to utilise the variables */
 
-$recovqr-primary: mat.define-palette(mat.$teal-palette);
+$recovqr-primary: mat.define-palette(mat.$indigo-palette);
 $recovqr-accent: mat.define-palette(mat.$indigo-palette);
 
 $recovqr-warn: mat.define-palette(mat.$red-palette);

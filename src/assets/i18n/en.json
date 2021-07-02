@@ -9,17 +9,23 @@
         "EMAIL": "Email address"
     },
     "AUTH": {
-        "NAME": "Name",
-        "EMAIL": "Email",
-        "PASSWORD": "Password",
-        "SIGN_UP": "Sign up",
-        "REGISTER_HEADING": "Create an account",
-        "LOGIN_HEADING": "Sign in to your account",
-        "LOGIN": "Log in",
-        "GO_TO_REGISTER_TEXT": "Not got an account with us yet? Register",
-        "GO_TO_REGISTER_LINK": "here",
-        "GO_TO_LOGIN_TEXT": "Already have an account? Log in",
-        "GO_TO_LOGIN_LINK": "here"
+        "FIELDS": {
+            "NAME": "Name",
+            "EMAIL": "Email",
+            "PASSWORD": "Password"
+        },
+        "LOGIN": {
+            "GO_TO_REGISTER_TEXT": "Not got an account with us yet? Register",
+            "GO_TO_REGISTER_LINK": "here",
+            "ACTION": "Log in",
+            "HEADING": "Sign in to your account"
+        },
+        "REGISTER": {
+            "HEADING": "Create an account",
+            "GO_TO_LOGIN_TEXT": "Already have an account? Log in",
+            "GO_TO_LOGIN_LINK": "here",
+            "ACTION": "Sign up"
+        }
     },
     "VALIDATION_ERRORS": {
         "REQUIRED": "This field is required",
