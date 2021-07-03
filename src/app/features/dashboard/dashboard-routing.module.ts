@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 
-const routes = [
+const routes: Routes = [
   {
     path: '',
-    component: DashboardPageComponent
+    component: DashboardPageComponent,
+    data: { heading: 'DASHBOARD.HEADING' }
   }
 ];
 

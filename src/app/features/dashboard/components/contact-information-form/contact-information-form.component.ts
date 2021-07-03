@@ -20,7 +20,8 @@ export class ContactInformationFormComponent implements OnInit {
       name: [''],
       country: [''],
       phone: [''],
-      email: ['']
+      email: [''],
+      message: ['']
     });
   }
 }

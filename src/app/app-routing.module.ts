@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/modules/authentication/guards/auth/auth.guard';
+import { AuthenticatedPageContainerComponent } from './core/pages/authenticated-page-container/authenticated-page-container.component';
 import { AuthRoutes } from './features/auth/constants/auth-routes.constant';
 import { DashboardRoutes } from './features/dashboard/constants/dashboard-routes.constants';
 import { InformationRoutes } from './features/information/constants/information-routes.constant';
@@ -10,19 +11,26 @@ const routes: Routes = [
     path: InformationRoutes.Root,
     loadChildren: () => import('./features/information/information.module').then((m) => m.InformationModule)
   },
-  {
-    path: DashboardRoutes.Root,
-    canActivate: [AuthGuard],
-    loadChildren: () => import('./features/dashboard/dashboard.module').then((m) => m.DashboardModule)
-  },
+
   {
     path: AuthRoutes.Root,
     loadChildren: () => import('./features/auth/auth.module').then((m) => m.AuthModule)
   },
   {
     path: '',
-    redirectTo: DashboardRoutes.Root,
-    pathMatch: 'full'
+    canActivate: [AuthGuard],
+    component: AuthenticatedPageContainerComponent,
+    children: [
+      {
+        path: DashboardRoutes.Root,
+        loadChildren: () => import('./features/dashboard/dashboard.module').then((m) => m.DashboardModule)
+      },
+      {
+        path: '',
+        redirectTo: DashboardRoutes.Root,
+        pathMatch: 'full'
+      }
+    ]
   }
 ];
 

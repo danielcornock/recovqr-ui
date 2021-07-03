@@ -1,3 +1,4 @@
+import { TextFieldModule } from '@angular/cdk/text-field';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -31,7 +32,8 @@ import { CustomErrorStateMatcher } from './providers/error-state-matcher.provide
     MatFormFieldModule,
     FormErrorsPipe,
     FormErrorComponent,
-    FormInputErrorHandlerDirective
+    FormInputErrorHandlerDirective,
+    TextFieldModule
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },

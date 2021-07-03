@@ -1,12 +1,24 @@
 {
     "DASHBOARD": {
-        "HEADER": "Dashboard"
+        "HEADING": "Dashboard"
     },
     "INFO_FORM": {
-        "NAME": "Full name",
-        "COUNTRY": "Country",
-        "PHONE": "Telephone number",
-        "EMAIL": "Email address"
+        "CONTACT": {
+            "HEADING": "Contact Information",
+            "MESSAGE": "Any fields left blank will not be displayed."
+        },
+        "PERSONALISATION": {
+            "HEADING": "Personalisation",
+            "MESSAGE": "Add your own personalised message and picture to increase the chance of someone returning your belongings."
+        },
+        "FIELDS": {
+            "NAME": "Full name",
+            "COUNTRY": "Country",
+            "PHONE": "Telephone number",
+            "EMAIL": "Email address",
+            "MESSAGE": "Personalised message"
+        },
+        "SAVE": "Save contact information"
     },
     "AUTH": {
         "FIELDS": {

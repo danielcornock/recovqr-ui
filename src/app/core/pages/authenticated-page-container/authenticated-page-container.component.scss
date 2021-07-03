@@ -1,0 +1,18 @@
+@import 'src/scss/theme';
+
+.authenticated-page-container {
+    &__container {
+        background-color: $color-background;
+        height: 100%;
+    }
+
+    &__content {
+        max-width: 600px;
+        background-color: $color-foreground;
+        margin: auto;
+        margin-top: 20px;
+        padding: 32px;
+        border-radius: $br-med;
+        box-shadow: 0 0 32px rgba(black, 0.05);
+    }
+}

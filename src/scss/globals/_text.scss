@@ -1,0 +1,19 @@
+@import 'src/scss/theme';
+
+.u-form-heading {
+    font-size: 18px;
+    font-weight: 500;
+    color: $color-primary;
+    margin-bottom: 12px;
+}
+
+.u-form-subheading {
+    font-size: 12px;
+    color: $color-body-light;
+    font-weight: 300;
+    margin-bottom: 20px !important;
+}
+
+.u-form-heading + .u-form-subheading {
+    margin-top: -16px;
+}
