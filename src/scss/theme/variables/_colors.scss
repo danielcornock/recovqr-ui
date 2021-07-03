@@ -5,6 +5,7 @@
 /* stylelint-enable */
 
 $color-primary: mat.get-color-from-palette($recovqr-primary);
+$color-primary-alt: mat.get-color-from-palette($recovqr-accent, "A400");
 $color-primary-hover: mat.get-color-from-palette($recovqr-accent, 600);
 $color-text-on-primary: white;
 

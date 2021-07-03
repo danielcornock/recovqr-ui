@@ -1,6 +1,8 @@
 {
-    "DASHBOARD": {
-        "HEADING": "Dashboard"
+    "NAVIGATION": {
+        "DASHBOARD": "Dashboard",
+        "EDIT_DETAILS": "Edit details",
+        "PREVIEW": "Preview"
     },
     "INFO_FORM": {
         "CONTACT": {

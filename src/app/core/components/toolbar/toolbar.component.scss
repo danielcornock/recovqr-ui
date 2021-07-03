@@ -1,0 +1,56 @@
+@import 'src/scss/theme';
+
+.toolbar {
+    &__container {
+        padding: 12px 24px;
+        background: linear-gradient(to right, $color-primary, $color-primary-alt);
+        box-shadow: 0 0 16px rgba(black, 0.2);
+        display: flex;
+        align-items: center;
+    }
+
+    &__branding {
+        display: flex;
+        align-items: center;
+        color: white;
+        margin-right: 32px;
+    }
+
+    &__branding-icon {
+        @include icon-size(26px);
+
+        transform: rotate(45deg);
+        margin-right: 8px;
+    }
+
+    &__branding-text {
+        font-size: 20px;
+        font-weight: 300;
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+    }
+
+    &__nav-item {
+        color: $color-text-on-primary;
+        text-decoration: none;
+        font-weight: 300;
+        letter-spacing: 1.1px;
+        padding: 8px 12px;
+        border-radius: $br-sm;
+
+        &.is-active {
+            background-color: rgba(black, 0.1);
+        }
+
+        &:hover {
+            background-color: rgba(black, 0.1);
+        }
+
+        & + & {
+            margin-left: 8px;
+        }
+    }
+}

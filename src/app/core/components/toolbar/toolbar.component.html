@@ -1,0 +1,12 @@
+<div class="toolbar__container">
+    <div class="toolbar__branding">
+        <mat-icon class="toolbar__branding-icon">qr_code_2</mat-icon>
+        <span class="toolbar__branding-text">recovqr</span>
+    </div>
+
+    <nav class="toolbar__nav">
+        <a *ngFor="let action of navLinks" class="toolbar__nav-item" [routerLink]="action.link" routerLinkActive="is-active">
+            {{ action.label | translate }}
+        </a>
+    </nav>
+</div>
