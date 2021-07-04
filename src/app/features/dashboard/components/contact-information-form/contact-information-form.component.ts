@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { CountryList } from 'src/app/common/constants/country-list.constant';
 import { ApiErrorResponse } from 'src/app/core/core-http/interfaces/api-error-response.interface';
+import { CountryList } from 'src/app/features/dashboard/constants/country-list.constant';
 
 @Component({
   selector: 'app-contact-information-form',

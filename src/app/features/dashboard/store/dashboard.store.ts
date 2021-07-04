@@ -2,30 +2,29 @@ import { Store, StoreConfig } from '@datorama/akita';
 import { InformationResponse } from '../interfaces/information-response.interface';
 
 export interface InformationState {
-  name: string;
-  email: string;
-  telephone: string;
-  country: string;
-  message: string;
+  information: InformationResponse;
 }
 
 export function createInitialState(): InformationState {
   return {
-    name: '',
-    email: '',
-    telephone: '',
-    country: '',
-    message: ''
+    information: {
+      _id: '',
+      name: '',
+      email: '',
+      telephone: '',
+      country: '',
+      message: ''
+    }
   };
 }
 
 @StoreConfig({ name: 'information' })
-export class InformationStore extends Store<InformationState> {
+export class DashboardStore extends Store<InformationState> {
   constructor() {
     super(createInitialState());
   }
 
   public setInformation(data: InformationResponse): void {
-    this.update(() => data);
+    this.update(() => ({ information: data }));
   }
 }

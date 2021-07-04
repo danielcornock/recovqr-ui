@@ -5,7 +5,7 @@ import { DashboardEndpoints } from '../../constants/dashboard-endpoints.constant
 import { InformationResponse } from '../../interfaces/information-response.interface';
 
 @Injectable()
-export class InformationApiService {
+export class DashboardApiService {
   constructor(private httpClient: HttpClient) {}
 
   public getInformation(): Observable<InformationResponse> {

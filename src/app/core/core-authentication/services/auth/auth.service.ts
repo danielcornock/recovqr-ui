@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, finalize, tap } from 'rxjs/operators';
-import { StorageKeys } from 'src/app/common/constants/storage-keys.constant';
 import { AuthApiService } from 'src/app/core/core-authentication/services/auth-api/auth-api.service';
+import { StorageKeys } from 'src/app/core/core-storage/constants/storage-keys.constant';
 import { StorageService } from 'src/app/core/core-storage/services/storage/storage.service';
 import { AuthResponse } from 'src/app/features/auth/interfaces/auth-response.interface';
 import { RegisterPayload } from 'src/app/features/auth/interfaces/register-payload.interface';

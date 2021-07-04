@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { finalize } from 'rxjs/operators';
 import { SnackbarService } from 'src/app/common/services/snackbar/snackbar.service';
 import { InformationResponse } from '../../interfaces/information-response.interface';
-import { InformationStore } from '../../store/information.store';
-import { InformationApiService } from '../information-api/information-api.service';
+import { DashboardStore } from '../../store/dashboard.store';
+import { DashboardApiService } from '../dashboard-api/dashboard-api.service';
 
 @Injectable()
-export class InformationService {
+export class DashboardService {
   constructor(
-    private informationApiService: InformationApiService,
-    private informationStore: InformationStore,
+    private informationApiService: DashboardApiService,
+    private informationStore: DashboardStore,
     private snackbarService: SnackbarService
   ) { }
 

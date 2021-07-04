@@ -4,8 +4,8 @@ import { combineLatest, Observable } from 'rxjs';
 import { filter, map, take } from 'rxjs/operators';
 import { AuthQuery } from 'src/app/core/core-authentication/store/auth.query';
 import { ApiErrorResponse } from 'src/app/core/core-http/interfaces/api-error-response.interface';
-import { InformationService } from '../../services/information/information.service';
-import { InformationQuery } from '../../store/information.query';
+import { DashboardService } from '../../services/dashboard/dashboard.service';
+import { DashboardQueryService } from '../../store/dashboard.query';
 
 @Component({
   selector: 'app-edit-details-page',
@@ -20,8 +20,8 @@ export class EditDetailsPageComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private informationQuery: InformationQuery,
-    private informationService: InformationService,
+    private informationQuery: DashboardQueryService,
+    private informationService: DashboardService,
     private authQuery: AuthQuery
   ) { }
 
