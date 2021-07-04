@@ -1,4 +1,4 @@
-<form class="contact-information-form__container" [formGroup]="form">
+<form class="contact-information-form__container" [formGroup]="form" [appFormInputErrorHandler]="errors" (ngSubmit)="submitForm.emit()">
     <section>
         <h2>{{ 'INFO_FORM.CONTACT.HEADING' | translate }}</h2>
         <p>{{ 'INFO_FORM.CONTACT.MESSAGE' | translate }}</p>
@@ -7,20 +7,24 @@
             <mat-label>{{ 'INFO_FORM.FIELDS.NAME' | translate }}</mat-label>
             <input type="text" matInput formControlName="name">
         </mat-form-field>
-    
-        <mat-form-field>
-            <mat-label>{{ 'INFO_FORM.FIELDS.PHONE' | translate }}</mat-label>
-            <input type="tel" matInput formControlName="phone">
-        </mat-form-field>
-    
+
         <mat-form-field>
             <mat-label>{{ 'INFO_FORM.FIELDS.EMAIL' | translate }}</mat-label>
             <input type="email" matInput formControlName="email">
         </mat-form-field>
     
         <mat-form-field>
+            <mat-label>{{ 'INFO_FORM.FIELDS.PHONE' | translate }}</mat-label>
+            <input type="tel" matInput formControlName="telephone">
+        </mat-form-field>
+    
+        <mat-form-field>
             <mat-label>{{ 'INFO_FORM.FIELDS.COUNTRY' | translate }}</mat-label>
-            <input type="text" matInput formControlName="country">
+            <mat-select formControlName="country">
+                <mat-option *ngFor="let country of availableCountries" [value]="country.value">
+                    {{ country.label }}
+                </mat-option>
+            </mat-select>
         </mat-form-field>
     </section>
 

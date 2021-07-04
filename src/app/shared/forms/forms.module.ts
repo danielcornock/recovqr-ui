@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { AppCommonModule } from 'src/app/common/common.module';
 import { FormErrorComponent } from './components/form-error/form-error.component';
 import { FormInputErrorHandlerDirective } from './directives/form-error-handler/form-input-error-handler.directive';
@@ -33,7 +34,8 @@ import { CustomErrorStateMatcher } from './providers/error-state-matcher.provide
     FormErrorsPipe,
     FormErrorComponent,
     FormInputErrorHandlerDirective,
-    TextFieldModule
+    TextFieldModule,
+    MatSelectModule
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },

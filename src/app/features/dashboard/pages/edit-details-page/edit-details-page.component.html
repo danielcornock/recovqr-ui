@@ -1,3 +1,10 @@
 <div class="edit-details-page__container">
-    <app-contact-information-form [form]="form"></app-contact-information-form>
+    <ng-container *ngIf="(form$ | async) as form">
+        <app-contact-information-form
+            [form]="form"
+            [errors]="errors$ | async"
+            (submitForm)="saveForm(form)"></app-contact-information-form>
+    </ng-container>
 </div>
+
+<mat-spinner *ngIf="isLoading$ | async"></mat-spinner>

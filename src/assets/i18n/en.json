@@ -20,6 +20,9 @@
             "EMAIL": "Email address",
             "MESSAGE": "Personalised message"
         },
+        "TOASTS": {
+            "SUCCESS": "Information successfully updated"
+        },
         "SAVE": "Save contact information"
     },
     "AUTH": {

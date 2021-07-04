@@ -16,4 +16,11 @@ export class AuthQuery extends Query<AuthState> {
   public isAuthenticated(): Observable<boolean> {
     return this.select((state) => !!state.jwt);
   }
+
+  public getUserDetails(): Observable<{ email: string, name: string }> {
+    return this.select((state) => ({
+      email: state.email,
+      name: state.name
+    }));
+  }
 }

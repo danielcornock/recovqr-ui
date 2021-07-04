@@ -6,6 +6,10 @@ import { ContactInformationFormComponent } from './components/contact-informatio
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { EditDetailsPageComponent } from './pages/edit-details-page/edit-details-page.component';
+import { InformationApiService } from './services/information-api/information-api.service';
+import { InformationService } from './services/information/information.service';
+import { InformationQuery } from './store/information.query';
+import { InformationStore } from './store/information.store';
 
 @NgModule({
   declarations: [
@@ -18,6 +22,12 @@ import { EditDetailsPageComponent } from './pages/edit-details-page/edit-details
     DashboardRoutingModule,
     AppCommonModule,
     AppFormsModule
+  ],
+  providers: [
+    InformationApiService,
+    InformationQuery,
+    InformationStore,
+    InformationService
   ]
 })
 export class DashboardModule { }
