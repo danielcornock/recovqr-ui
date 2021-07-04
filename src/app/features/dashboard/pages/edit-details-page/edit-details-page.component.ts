@@ -2,8 +2,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { combineLatest, Observable } from 'rxjs';
 import { filter, map, take } from 'rxjs/operators';
-import { ApiErrorResponse } from 'src/app/core/interfaces/api-error-response.interface';
-import { AuthQuery } from 'src/app/core/modules/authentication/store/auth.query';
+import { AuthQuery } from 'src/app/core/core-authentication/store/auth.query';
+import { ApiErrorResponse } from 'src/app/core/core-http/interfaces/api-error-response.interface';
 import { InformationService } from '../../services/information/information.service';
 import { InformationQuery } from '../../store/information.query';
 

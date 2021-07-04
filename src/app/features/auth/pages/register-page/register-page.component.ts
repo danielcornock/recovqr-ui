@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { ApiErrorResponse } from 'src/app/core/interfaces/api-error-response.interface';
-import { AuthService } from 'src/app/core/modules/authentication/services/auth/auth.service';
-import { AuthQuery } from 'src/app/core/modules/authentication/store/auth.query';
+import { AuthService } from 'src/app/core/core-authentication/services/auth/auth.service';
+import { AuthQuery } from 'src/app/core/core-authentication/store/auth.query';
+import { ApiErrorResponse } from 'src/app/core/core-http/interfaces/api-error-response.interface';
 import { DashboardRoutes } from 'src/app/features/dashboard/constants/dashboard-routes.constants';
 import { AuthRoutes } from '../../constants/auth-routes.constant';
 

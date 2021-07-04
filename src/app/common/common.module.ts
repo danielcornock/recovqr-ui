@@ -5,7 +5,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TranslateModule } from '@ngx-translate/core';
 import { SnackbarService } from './services/snackbar/snackbar.service';
-import { StorageService } from './services/storage/storage.service';
 
 @NgModule({
   declarations: [],
@@ -13,7 +12,7 @@ import { StorageService } from './services/storage/storage.service';
     CommonModule,
     MatSnackBarModule
   ],
-  providers: [StorageService, SnackbarService],
+  providers: [SnackbarService],
   exports: [
     TranslateModule,
     MatIconModule,

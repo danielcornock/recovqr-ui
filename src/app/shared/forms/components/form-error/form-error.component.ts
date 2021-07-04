@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { ApiErrorResponse } from 'src/app/core/interfaces/api-error-response.interface';
+import { ApiErrorResponse } from 'src/app/core/core-http/interfaces/api-error-response.interface';
 
 @Component({
   selector: 'app-form-error',

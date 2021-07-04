@@ -1,6 +1,6 @@
 import { Directive, Input, OnChanges } from '@angular/core';
 import { FormGroupDirective } from '@angular/forms';
-import { ApiErrorMessageResponse, ApiErrorResponse } from 'src/app/core/interfaces/api-error-response.interface';
+import { ApiErrorMessageResponse, ApiErrorResponse } from 'src/app/core/core-http/interfaces/api-error-response.interface';
 
 @Directive({
   selector: '[appFormInputErrorHandler]'

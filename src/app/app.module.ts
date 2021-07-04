@@ -1,9 +1,14 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppCommonModule } from './common/common.module';
-import { CoreModule } from './core/core.module';
+import { CoreAuthenticationModule } from './core/core-authentication/authentication.module';
+import { CoreComponentsModule } from './core/core-components/core-components.module';
+import { CoreHttpModule } from './core/core-http/core-http.module';
+import { CoreRoutingModule } from './core/core-routing/core-routing.module';
+import { CoreStorageModule } from './core/core-storage/core-storage.module';
+import { CoreTranslateModule } from './core/core-translate/core-translate.module';
 
 @NgModule({
   declarations: [
@@ -11,9 +16,14 @@ import { CoreModule } from './core/core.module';
   ],
   imports: [
     BrowserAnimationsModule,
-    AppCommonModule,
     AppRoutingModule,
-    CoreModule
+    HttpClientModule,
+    CoreComponentsModule,
+    CoreAuthenticationModule,
+    CoreHttpModule,
+    CoreTranslateModule,
+    CoreRoutingModule,
+    CoreStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { AuthenticatedPageContainerComponent } from './authenticated-page-container.component';
+
 
 describe('AuthenticatedPageContainerComponent', () => {
   let component: AuthenticatedPageContainerComponent;
@@ -8,9 +8,9 @@ describe('AuthenticatedPageContainerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AuthenticatedPageContainerComponent ]
+      declarations: [AuthenticatedPageContainerComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

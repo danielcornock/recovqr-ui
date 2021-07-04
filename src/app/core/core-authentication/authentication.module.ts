@@ -26,4 +26,4 @@ import { AuthStore } from './store/auth.store';
     }
   ]
 })
-export class AuthenticationModule { }
+export class CoreAuthenticationModule { }

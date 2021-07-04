@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from './core/modules/authentication/services/auth/auth.service';
-import { I18nService } from './core/services/i18n/i18n.service';
+import { AuthService } from './core/core-authentication/services/auth/auth.service';
+import { I18nService } from './core/core-translate/services/i18n/i18n.service';
 
 @Component({
   selector: 'app-root',
