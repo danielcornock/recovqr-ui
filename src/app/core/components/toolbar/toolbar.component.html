@@ -5,7 +5,12 @@
     </div>
 
     <nav class="toolbar__nav">
-        <a *ngFor="let action of navLinks" class="toolbar__nav-item" [routerLink]="action.link" routerLinkActive="is-active">
+        <a
+            *ngFor="let action of navLinks"
+            class="toolbar__nav-item"
+            [routerLink]="action.link"
+            routerLinkActive="is-active"
+            [routerLinkActiveOptions]="{ exact: true }">
             {{ action.label | translate }}
         </a>
     </nav>

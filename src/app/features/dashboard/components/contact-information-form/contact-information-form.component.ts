@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { UserInformation } from 'src/app/common/interfaces/user-information.interface';
 
 @Component({
@@ -7,21 +7,10 @@ import { UserInformation } from 'src/app/common/interfaces/user-information.inte
   templateUrl: './contact-information-form.component.html',
   styleUrls: ['./contact-information-form.component.scss']
 })
-export class ContactInformationFormComponent implements OnInit {
+export class ContactInformationFormComponent {
   @Input()
   public userInformation: UserInformation = {};
 
+  @Input()
   public form: FormGroup;
-
-  constructor(private formBuilder: FormBuilder) { }
-
-  public ngOnInit(): void {
-    this.form = this.formBuilder.group({
-      name: [''],
-      country: [''],
-      phone: [''],
-      email: [''],
-      message: ['']
-    });
-  }
 }

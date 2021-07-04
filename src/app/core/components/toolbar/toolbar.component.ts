@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { DashboardRoutes } from 'src/app/features/dashboard/constants/dashboard-routes.constants';
 
 @Component({
   selector: 'app-toolbar',
@@ -13,15 +14,15 @@ export class ToolbarComponent implements OnInit {
     this.navLinks = [
       {
         label: 'NAVIGATION.DASHBOARD',
-        link: 'dashboard'
+        link: DashboardRoutes.Root
       },
       {
         label: 'NAVIGATION.EDIT_DETAILS',
-        link: 'edit-details'
+        link: `${DashboardRoutes.Root}/${DashboardRoutes.EditProfile}`
       },
       {
         label: 'NAVIGATION.PREVIEW',
-        link: 'preview'
+        link: 'dashboard/preview'
       }
     ];
   }
