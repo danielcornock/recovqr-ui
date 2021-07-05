@@ -1,0 +1,15 @@
+.table {
+    &__actions {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__row {
+        height: initial;
+    }
+
+    &__table {
+        width: 100%;
+        background: transparent;
+    }
+}

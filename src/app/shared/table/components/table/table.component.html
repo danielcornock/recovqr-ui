@@ -1,0 +1,34 @@
+<mat-table
+  *ngIf="items"
+  class="table__table"
+  [dataSource]="items"
+  [class.in-modal]="isInModal">
+  <ng-container *ngFor="let column of tableOptions.columns" [matColumnDef]="column.key">
+    <mat-header-cell *matHeaderCellDef>{{ column.label | translate }}</mat-header-cell>
+
+    <mat-cell *matCellDef="let row">
+      {{ column.parser ? column.parser(row) : row[column.key] }}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container *ngIf="tableOptions.actions?.length" matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+
+    <mat-cell *matCellDef="let row">
+      <div class="table__actions">
+        <button
+          *ngFor="let action of tableOptions.actions"
+          mat-icon-button
+          type="button"
+          (click)="action.action(row)">
+          <mat-icon>{{ action.icon }}</mat-icon>
+        </button>
+      </div>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+  <mat-row
+    *matRowDef="let row; columns: columns"
+    class="table__row"></mat-row>
+</mat-table>
