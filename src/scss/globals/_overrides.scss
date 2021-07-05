@@ -21,3 +21,9 @@ mat-spinner {
     left: 50%;
     transform: translate(-50%, -50%) scale(0.4);
 }
+
+mat-cell:first-of-type,
+mat-header-cell:first-of-type,
+mat-footer-cell:first-of-type {
+    padding-left: 0 !important;
+} 
