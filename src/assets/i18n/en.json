@@ -25,6 +25,22 @@
         },
         "SAVE": "Save contact information"
     },
+    "DASHBOARD": {
+        "QR": {
+            "HEADING": "Your Qr Code",
+            "MESSAGE": "Your QR code remains the same even if you go on to change information at a later date.",
+            "DOWNLOAD": "Download as PNG"
+        },
+        "TAGS": {
+            "HEADING": "Your Latest Tags",
+            "MESSAGE": "See the latest scans for your devices.",
+            "TABLE": {
+                "LOCATION": "Location",
+                "DATE": "Date",
+                "TIME": "Time"
+            }
+        }
+    },
     "AUTH": {
         "FIELDS": {
             "NAME": "Name",

@@ -1,2 +1,20 @@
 <div class="dashboard-page__container">
+    <section *ngIf="(qrCode$ | async) as qrCode">
+        <h2>{{ 'DASHBOARD.QR.HEADING' | translate }}</h2>
+        <p>{{ 'DASHBOARD.QR.MESSAGE' | translate }}</p>
+
+        <div class="dashboard-page__qr-container">
+            <img class="dashboard-page__qr" [src]="qrCode" alt="Your personal QR code.">
+            <a class="dashboard-page__qr-download" [href]="qrCode" download="recovqr-qr-code">
+                <mat-icon>file_download</mat-icon>
+                <span>{{ 'DASHBOARD.QR.DOWNLOAD' | translate }}</span>
+            </a>
+        </div>
+    </section>
+    <section>
+        <h2>{{ 'DASHBOARD.TAGS.HEADING' | translate }}</h2>
+        <p>{{ 'DASHBOARD.TAGS.MESSAGE' | translate }}</p>
+
+        <app-table [items]="items" [tableOptions]="tableOptions"></app-table>
+    </section>
 </div>
