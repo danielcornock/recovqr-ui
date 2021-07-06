@@ -8,9 +8,9 @@ describe('InformationDisplayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InformationDisplayComponent ]
+      declarations: [InformationDisplayComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
