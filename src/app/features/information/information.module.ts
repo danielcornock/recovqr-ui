@@ -4,6 +4,7 @@ import { AppCommonModule } from 'src/app/common/common.module';
 import { InformationLibraryModule } from 'src/app/shared/information-library/information-library.module';
 import { InformationRoutingModule } from './information-routing.module';
 import { InformationPageComponent } from './pages/information-page/information-page.component';
+import { InformationApiService } from './services/information-api/information-api.service';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,9 @@ import { InformationPageComponent } from './pages/information-page/information-p
     InformationRoutingModule,
     AppCommonModule,
     InformationLibraryModule
+  ],
+  providers: [
+    InformationApiService
   ]
 })
 export class InformationModule { }

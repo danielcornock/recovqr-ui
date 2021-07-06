@@ -1,1 +1,7 @@
-<p>information-page works!</p>
+<div class="information-page__container" *ngIf="(information$ | async) as information">
+    <div class="information-page__branding">
+        <mat-icon class="information-page__branding-icon">qr_code_2</mat-icon>
+        <span class="information-page__branding-text">recovqr</span>
+    </div>
+    <app-information-display class="information-page__content" [information]="information"></app-information-display>
+</div>
