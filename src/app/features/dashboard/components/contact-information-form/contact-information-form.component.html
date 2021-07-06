@@ -1,9 +1,13 @@
-<form class="contact-information-form__container" [formGroup]="form" [appFormInputErrorHandler]="errors" (ngSubmit)="submitForm.emit()" #formElement>
+<form
+    class="contact-information-form__container"
+    [formGroup]="form"
+    [appFormInputErrorHandler]="errors"
+    (ngSubmit)="submitForm.emit()">
     <section>
         <h2>{{ 'INFO_FORM.CONTACT.HEADING' | translate }}</h2>
         <p>{{ 'INFO_FORM.CONTACT.MESSAGE' | translate }}</p>
 
-        <app-form-error *ngIf="formElement.submitted" [error]="form.errors"></app-form-error>
+        <app-form-error [error]="form.errors"></app-form-error>
 
         <mat-form-field>
             <mat-icon matPrefix>person</mat-icon>

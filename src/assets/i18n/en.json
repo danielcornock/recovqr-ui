@@ -20,6 +20,9 @@
             "EMAIL": "Email address",
             "MESSAGE": "Personalised message"
         },
+        "ERRORS": {
+            "ATLEAST_ONE": "At least one of the following fields must be filled in."
+        },
         "TOASTS": {
             "SUCCESS": "Information successfully updated"
         },
@@ -45,6 +48,13 @@
     "PREVIEW": {
         "HEADING": "Your Information Preview",
         "MESSAGE": "The information below is exactly what somebody will see when they scan your QR code, so make sure there's nothing on there that you wouldn't want a stranger to see."
+    },
+    "INFORMATION": {
+        "NAME": "Name",
+        "COUNTRY": "Country",
+        "EMAIL": "Email address",
+        "PHONE": "Telephone number",
+        "MESSAGE": "Message"
     },
     "AUTH": {
         "FIELDS": {

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, ValidationErrors } from '@angular/forms';
 import { combineLatest, Observable } from 'rxjs';
 import { filter, map, take } from 'rxjs/operators';
 import { AuthQuery } from 'src/app/core/core-authentication/store/auth.query';
@@ -45,6 +45,8 @@ export class EditDetailsPageComponent implements OnInit {
           country: [information.country],
           telephone: [information.telephone],
           message: [information.message]
+        }, {
+          validators: this.formValidator.bind(this)
         });
       })
     );
@@ -56,5 +58,15 @@ export class EditDetailsPageComponent implements OnInit {
     }
 
     this.informationService.updateInformation(form.value);
+  }
+
+  private formValidator(group: FormGroup): ValidationErrors | null {
+    const hasOneField = Object.values(group.controls).some((control) => !!control.value);
+
+    if (hasOneField) {
+      return null;
+    }
+
+    return { message: 'INFO_FORM.ERRORS.ATLEAST_ONE' };
   }
 }
