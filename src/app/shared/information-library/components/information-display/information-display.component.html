@@ -1,0 +1,14 @@
+<div class="information-display__container">
+    <p class="information-display__message" *ngIf="information.message" [innerHTML]="information.message"></p>
+    <div class="information-display__fields">
+        <ng-container *ngFor="let field of informationFields">
+            <div *ngIf="field.value" class="information-display__section">
+                <mat-icon class="information-display__icon" color="primary">{{ field.icon }}</mat-icon>
+                <div class="information-display__section-content">
+                    <p class="information-display__label">{{ field.label | translate }}</p>
+                    <p class="information-display__value">{{ field.value }}</p>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

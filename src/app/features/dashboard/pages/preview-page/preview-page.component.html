@@ -1,6 +1,11 @@
 <div class="preview-page__container">
-    <section>
+    <section *ngIf="(information$ | async) as information">
         <h2>{{ 'PREVIEW.HEADING' | translate }}</h2>
         <p>{{ 'PREVIEW.MESSAGE' | translate }}</p>
+
+        <hr/>
+        <app-information-display [information]="information"></app-information-display>
     </section>
 </div>
+
+<mat-spinner *ngIf="isLoading$ | async"></mat-spinner>

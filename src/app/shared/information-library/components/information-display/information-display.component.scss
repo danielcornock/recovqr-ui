@@ -1,0 +1,38 @@
+@import 'src/scss/theme';
+
+.information-display {
+    &__message {
+        color: $color-body-dark;
+        margin-bottom: 16px;
+        white-space: pre-wrap;
+    }
+
+    &__fields {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__label {
+        font-size: 75%;
+        color: $color-form-label;
+        margin-bottom: 0;
+    }
+
+    &__value {
+        color: $color-body;
+        margin-bottom: 0;
+    }
+
+    &__section {
+        display: flex;
+        align-items: center;
+        margin: 10px;
+        flex: 1 1 45%;
+    }
+
+    &__icon {
+        @include icon-size(22px);
+
+        margin-right: 20px;
+    }
+}
