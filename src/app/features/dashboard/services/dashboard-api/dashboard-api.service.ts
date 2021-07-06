@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { DashboardEndpoints } from '../../constants/dashboard-endpoints.constant';
 import { InformationResponse } from '../../interfaces/information-response.interface';
 import { QrCodeResponse } from '../../interfaces/qr-code-response.interface';
+import { Tag } from '../../interfaces/tag.interface';
 
 @Injectable()
 export class DashboardApiService {
@@ -19,5 +20,9 @@ export class DashboardApiService {
 
   public getOwnQrCode(): Observable<QrCodeResponse> {
     return this.httpClient.get<QrCodeResponse>(DashboardEndpoints.QrCode());
+  }
+
+  public getTagList(): Observable<Tag[]> {
+    return this.httpClient.get<Tag[]>(DashboardEndpoints.Tags());
   }
 }

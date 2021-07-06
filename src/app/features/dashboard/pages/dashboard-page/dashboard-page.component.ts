@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { BehaviorSubject, forkJoin, Observable } from 'rxjs';
+import { finalize, map, take } from 'rxjs/operators';
 import { TableOptions } from 'src/app/shared/table/interfaces/table-options.interface';
+import { Tag } from '../../interfaces/tag.interface';
 import { DashboardApiService } from '../../services/dashboard-api/dashboard-api.service';
 
 @Component({
@@ -11,7 +12,8 @@ import { DashboardApiService } from '../../services/dashboard-api/dashboard-api.
 })
 export class DashboardPageComponent implements OnInit {
   public qrCode$: Observable<string>;
-  public isLoading$: Observable<boolean>;
+  public isLoading$ = new BehaviorSubject<boolean>(true);
+  public tags$: Observable<Tag[]>;
 
   public tableOptions: TableOptions<unknown>;
   public items = [];
@@ -19,8 +21,18 @@ export class DashboardPageComponent implements OnInit {
   constructor(private dashboardApiService: DashboardApiService) {}
 
   public ngOnInit(): void {
-    this.qrCode$ = this.dashboardApiService.getOwnQrCode().pipe(map((res) => res.qrCode));
+    this.isLoading$.next(true);
     this.createTable();
+
+    const data$ = forkJoin([
+      this.dashboardApiService.getOwnQrCode().pipe(take(1)),
+      this.dashboardApiService.getTagList().pipe(take(1))
+    ]).pipe(
+      finalize(() => this.isLoading$.next(false))
+    );
+
+    this.qrCode$ = data$.pipe(map(([qrRes]) => qrRes.qrCode));
+    this.tags$ = data$.pipe(map(([_, tags]) => tags));
   }
 
   private createTable(): void {

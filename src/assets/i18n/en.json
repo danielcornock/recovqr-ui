@@ -34,6 +34,7 @@
         "TAGS": {
             "HEADING": "Your Latest Tags",
             "MESSAGE": "See the latest scans for your devices.",
+            "EMPTY": "No tags reported to date",
             "TABLE": {
                 "LOCATION": "Location",
                 "DATE": "Date",
