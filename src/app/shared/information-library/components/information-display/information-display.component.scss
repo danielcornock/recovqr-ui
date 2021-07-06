@@ -10,6 +10,7 @@
     &__fields {
         display: flex;
         flex-wrap: wrap;
+        gap: 20px;
     }
 
     &__label {
@@ -26,8 +27,11 @@
     &__section {
         display: flex;
         align-items: center;
-        margin: 10px;
         flex: 1 1 45%;
+
+        @media (max-width: 500px) {
+            flex: 1 1 100%;
+        }
     }
 
     &__icon {
