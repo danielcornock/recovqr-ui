@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardRoutes } from './constants/dashboard-routes.constants';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { EditDetailsPageComponent } from './pages/edit-details-page/edit-details-page.component';
+import { PreviewPageComponent } from './pages/preview-page/preview-page.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,11 @@ const routes: Routes = [
     path: DashboardRoutes.EditProfile,
     component: EditDetailsPageComponent,
     data: { heading: 'NAVIGATION.EDIT_DETAILS' }
+  },
+  {
+    path: DashboardRoutes.Preview,
+    component: PreviewPageComponent,
+    data: { heading: 'NAVIGATION.PREVIEW' }
   }
 ];
 

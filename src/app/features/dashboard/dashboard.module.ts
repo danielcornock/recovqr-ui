@@ -12,12 +12,14 @@ import { DashboardApiService } from './services/dashboard-api/dashboard-api.serv
 import { DashboardService } from './services/dashboard/dashboard.service';
 import { DashboardQueryService } from './store/dashboard.query';
 import { DashboardStore } from './store/dashboard.store';
+import { PreviewPageComponent } from './pages/preview-page/preview-page.component';
 
 @NgModule({
   declarations: [
     DashboardPageComponent,
     ContactInformationFormComponent,
-    EditDetailsPageComponent
+    EditDetailsPageComponent,
+    PreviewPageComponent
   ],
   imports: [
     CommonModule,

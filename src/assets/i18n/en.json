@@ -42,6 +42,10 @@
             }
         }
     },
+    "PREVIEW": {
+        "HEADING": "Your Information Preview",
+        "MESSAGE": "The information below is exactly what somebody will see when they scan your QR code, so make sure there's nothing on there that you wouldn't want a stranger to see."
+    },
     "AUTH": {
         "FIELDS": {
             "NAME": "Name",
