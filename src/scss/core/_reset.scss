@@ -10,3 +10,9 @@ h5 {
     margin: 0;
     line-height: 1 !important;
 }
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
