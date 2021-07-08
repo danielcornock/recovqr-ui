@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, forkJoin, Observable } from 'rxjs';
 import { finalize, map, take } from 'rxjs/operators';
@@ -15,10 +16,12 @@ export class DashboardPageComponent implements OnInit {
   public isLoading$ = new BehaviorSubject<boolean>(true);
   public tags$: Observable<Tag[]>;
 
-  public tableOptions: TableOptions<unknown>;
-  public items = [];
+  public tableOptions: TableOptions<Tag>;
 
-  constructor(private dashboardApiService: DashboardApiService) {}
+  constructor(
+    private dashboardApiService: DashboardApiService,
+    private datePipe: DatePipe
+  ) {}
 
   public ngOnInit(): void {
     this.isLoading$.next(true);
@@ -41,16 +44,13 @@ export class DashboardPageComponent implements OnInit {
     this.tableOptions = {
       columns: [
         {
-          key: 'location',
+          key: 'shortAddress',
           label: translationKey + 'LOCATION'
         },
         {
           key: 'date',
-          label: translationKey + 'DATE'
-        },
-        {
-          key: 'time',
-          label: translationKey + 'TIME'
+          label: translationKey + 'DATE',
+          parser: (data) => this.datePipe.transform(data.createdAt, 'medium')
         }
       ],
       actions: []

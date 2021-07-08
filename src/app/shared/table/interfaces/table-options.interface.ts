@@ -6,7 +6,7 @@ export interface TableOptions<T> {
 export interface TableColumn<T> {
   label: string;
   key: string;
-  parser?(item: T): string | number;
+  parser?(item: T): string | number | null;
 }
 
 export interface TableAction<T> {

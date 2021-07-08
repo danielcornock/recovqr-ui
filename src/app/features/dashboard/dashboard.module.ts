@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { AppCommonModule } from 'src/app/common/common.module';
 import { AppFormsModule } from 'src/app/shared/forms/forms.module';
@@ -8,11 +8,11 @@ import { ContactInformationFormComponent } from './components/contact-informatio
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { EditDetailsPageComponent } from './pages/edit-details-page/edit-details-page.component';
+import { PreviewPageComponent } from './pages/preview-page/preview-page.component';
 import { DashboardApiService } from './services/dashboard-api/dashboard-api.service';
 import { DashboardService } from './services/dashboard/dashboard.service';
 import { DashboardQueryService } from './store/dashboard.query';
 import { DashboardStore } from './store/dashboard.store';
-import { PreviewPageComponent } from './pages/preview-page/preview-page.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,8 @@ import { PreviewPageComponent } from './pages/preview-page/preview-page.componen
     DashboardApiService,
     DashboardQueryService,
     DashboardStore,
-    DashboardService
+    DashboardService,
+    DatePipe
   ]
 })
 export class DashboardModule { }
