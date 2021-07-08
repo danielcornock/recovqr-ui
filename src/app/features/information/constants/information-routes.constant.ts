@@ -1,4 +1,7 @@
 export const InformationRoutes = {
-  Root: 'information',
+  Root: 'information'
+};
+
+export const InformationRouteParams = {
   PageId: 'id'
 };

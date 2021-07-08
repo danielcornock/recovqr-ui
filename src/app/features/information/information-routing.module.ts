@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InformationRoutes } from './constants/information-routes.constant';
+import { InformationRouteParams } from './constants/information-routes.constant';
 import { InformationPageComponent } from './pages/information-page/information-page.component';
 
 const routes: Routes = [
   {
-    path: `:${InformationRoutes.PageId}`,
+    path: `:${InformationRouteParams.PageId}`,
     component: InformationPageComponent
   }
 ];

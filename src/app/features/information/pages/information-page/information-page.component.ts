@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { combineLatest, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
+import { GeolocationService } from 'src/app/core/core-app/services/geolocation/geolocation.service';
 import { InformationResponse } from 'src/app/features/dashboard/interfaces/information-response.interface';
-import { InformationRoutes } from '../../constants/information-routes.constant';
+import { InformationRouteParams } from '../../constants/information-routes.constant';
 import { InformationApiService } from '../../services/information-api/information-api.service';
 
 @Component({
@@ -14,19 +15,27 @@ import { InformationApiService } from '../../services/information-api/informatio
 export class InformationPageComponent implements OnInit {
   public information$: Observable<InformationResponse>;
 
-  constructor(private informationApiService: InformationApiService, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private informationApiService: InformationApiService,
+    private activatedRoute: ActivatedRoute,
+    private geoLocationService: GeolocationService
+  ) {}
 
   public ngOnInit(): void {
-    this.information$ = this.activatedRoute.paramMap.pipe(
-      switchMap((paramMap) => {
-        const id = paramMap.get(InformationRoutes.PageId) || '';
+    const userId$ = this.getUserId$();
 
-        return combineLatest([
-          this.informationApiService.getInformation(id),
-          this.informationApiService.sendTag(id)
-        ]);
-      }),
-      map(([information]) => information)
+    this.information$ = userId$.pipe(
+      switchMap((userId) => this.informationApiService.getInformation(userId))
     );
+
+    userId$.pipe(
+      switchMap((userId) => this.geoLocationService.getLocation().pipe(
+        switchMap((location) => this.informationApiService.sendTag(userId, location))
+      ))
+    ).subscribe();
+  }
+
+  private getUserId$(): Observable<string> {
+    return this.activatedRoute.paramMap.pipe(map((paramMap) => paramMap.get(InformationRouteParams.PageId) || ''));
   }
 }
