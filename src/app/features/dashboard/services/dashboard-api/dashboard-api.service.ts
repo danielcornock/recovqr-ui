@@ -25,4 +25,8 @@ export class DashboardApiService {
   public getTagList(): Observable<Tag[]> {
     return this.httpClient.get<Tag[]>(DashboardEndpoints.Tags());
   }
+
+  public deleteTag(tagId: string): Observable<void> {
+    return this.httpClient.delete<void>(DashboardEndpoints.TagDetail(tagId));
+  }
 }

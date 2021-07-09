@@ -16,4 +16,15 @@ export class SnackbarService {
       verticalPosition: 'bottom'
     });
   }
+
+  public error(translation?: string): void {
+    const message = this.translateService.instant(translation || 'VALIDATION_ERRORS.GENERIC');
+
+    this.snackbar.open(message, '', {
+      panelClass: 'snackbar-error',
+      duration: 2000,
+      horizontalPosition: 'right',
+      verticalPosition: 'bottom'
+    });
+  }
 }

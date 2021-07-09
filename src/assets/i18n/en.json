@@ -39,6 +39,8 @@
             "MESSAGE": "See the latest scans for your devices.",
             "EMPTY": "No tags reported to date",
             "OPEN_INFO_TOOLTIP": "View more information",
+            "DELETE_TOAST": "Tag successfully deleted",
+            "DELETE_TOOLTIP": "Delete tag",
             "TABLE": {
                 "LOCATION": "Location",
                 "DATE": "Date",
@@ -87,6 +89,7 @@
         "REQUIRED": "This field is required",
         "FALLBACK": "Invalid field",
         "EMAIL": "Must be a valid email address",
-        "MIN_LENGTH": "Not enough characters"
+        "MIN_LENGTH": "Not enough characters",
+        "GENERIC": "Something went wrong"
     }
 }

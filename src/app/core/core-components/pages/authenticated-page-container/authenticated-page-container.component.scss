@@ -24,7 +24,7 @@ $header-height: 60px;
         @media (max-width: 600px) {
             margin-top: 0;
             border-radius: 0;
-            height: 100%;
+            min-height: 100%;
             padding: 20px;
         }
     }
@@ -39,5 +39,9 @@ $header-height: 60px;
     &__scroll-view {
         overflow-y: auto;
         padding-bottom: 20px;
+
+        @media (max-width: 600px) {
+            padding: 0;
+        }
     }
 }
