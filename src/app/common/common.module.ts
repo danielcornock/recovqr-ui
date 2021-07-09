@@ -4,10 +4,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TranslateModule } from '@ngx-translate/core';
+import { SafePipe } from './pipes/safe/safe.pipe';
 import { SnackbarService } from './services/snackbar/snackbar.service';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SafePipe
+  ],
   imports: [
     CommonModule,
     MatSnackBarModule
@@ -16,7 +19,8 @@ import { SnackbarService } from './services/snackbar/snackbar.service';
   exports: [
     TranslateModule,
     MatIconModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    SafePipe
   ]
 })
 export class AppCommonModule { }
