@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUrl: 'https://recovqr.herokuapp.com/api/v1/'
 };
