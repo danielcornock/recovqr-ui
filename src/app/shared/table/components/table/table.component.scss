@@ -1,7 +1,10 @@
+@import 'src/scss/theme';
+
 .table {
     &__actions {
         display: flex;
         justify-content: flex-end;
+        width: 100%;
     }
 
     &__row {
@@ -11,5 +14,14 @@
     &__table {
         width: 100%;
         background: transparent;
+    }
+
+    &__action {
+        color: $color-body-light;
+        transition: 250ms color;
+
+        &:hover {
+            color: $color-primary;
+        }
     }
 }

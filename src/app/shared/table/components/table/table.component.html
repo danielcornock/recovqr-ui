@@ -18,8 +18,10 @@
       <div class="table__actions">
         <button
           *ngFor="let action of tableOptions.actions"
+          class="table__action"
           mat-icon-button
           type="button"
+          [matTooltip]="action.tooltip | translate"
           (click)="action.action(row)">
           <mat-icon>{{ action.icon }}</mat-icon>
         </button>
