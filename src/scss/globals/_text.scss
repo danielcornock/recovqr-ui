@@ -17,3 +17,14 @@
 .u-form-heading + .u-form-subheading {
     margin-top: -16px;
 }
+
+p.u-label {
+    font-size: 75%;
+    color: $color-form-label;
+    margin-bottom: 0;
+}
+
+p.u-value {
+    color: $color-body;
+    margin-bottom: 0;
+}

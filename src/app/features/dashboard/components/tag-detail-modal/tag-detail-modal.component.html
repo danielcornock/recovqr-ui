@@ -1,0 +1,20 @@
+<div class="tag-detail-modal__container">
+    <h2 mat-dialog-title>{{ translateKey + 'HEADING' | translate }}</h2>
+
+    <div class="tag-detail-modal__section">
+        <p class="u-label">{{ translateKey + 'ADDRESS' | translate }}</p>
+        <p class="tag-detail-modal__address u-value">{{ formattedAddress }}</p>
+    </div>
+
+    <div class="tag-detail-modal__section">
+        <p class="u-label">{{ translateKey + 'DATE' | translate }}</p>
+        <p class="tag-detail-modal__address u-value">{{ tag.createdAt | date: 'longDate' }}</p>
+    </div>
+
+    <div class="tag-detail-modal__section">
+        <p class="u-label">{{ translateKey + 'TIME' | translate }}</p>
+        <p class="tag-detail-modal__address u-value">{{ tag.createdAt | date: 'mediumTime' }}</p>
+    </div>
+
+    <button class="tag-detail-modal__map-button u-submit-button" (click)="openInMap()">{{ translateKey + 'OPEN_IN_MAPS' | translate }}</button>
+</div>

@@ -38,11 +38,19 @@
             "HEADING": "Your Latest Tags",
             "MESSAGE": "See the latest scans for your devices.",
             "EMPTY": "No tags reported to date",
+            "OPEN_INFO_TOOLTIP": "View more information",
             "TABLE": {
                 "LOCATION": "Location",
                 "DATE": "Date",
                 "TIME": "Time"
             }
+        },
+        "TAG_MODAL": {
+            "HEADING": "Tag Information",
+            "ADDRESS": "Address",
+            "DATE": "Date",
+            "TIME": "Time",
+            "OPEN_IN_MAPS": "Open in google maps"
         }
     },
     "PREVIEW": {

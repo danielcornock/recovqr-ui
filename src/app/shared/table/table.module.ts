@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { AppCommonModule } from 'src/app/common/common.module';
 import { TableComponent } from './components/table/table.component';
 
@@ -11,7 +13,9 @@ import { TableComponent } from './components/table/table.component';
   imports: [
     CommonModule,
     MatTableModule,
-    AppCommonModule
+    AppCommonModule,
+    MatTooltipModule,
+    MatButtonModule
   ],
   exports: [TableComponent]
 })

@@ -1,8 +1,11 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { BehaviorSubject, forkJoin, Observable } from 'rxjs';
 import { finalize, map, take } from 'rxjs/operators';
 import { TableOptions } from 'src/app/shared/table/interfaces/table-options.interface';
+import { TagDetailModalData } from '../../components/tag-detail-modal/interfaces/tag-detail-modal-data.interface';
+import { TagDetailModalComponent } from '../../components/tag-detail-modal/tag-detail-modal.component';
 import { Tag } from '../../interfaces/tag.interface';
 import { DashboardApiService } from '../../services/dashboard-api/dashboard-api.service';
 
@@ -20,7 +23,8 @@ export class DashboardPageComponent implements OnInit {
 
   constructor(
     private dashboardApiService: DashboardApiService,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    private matDialog: MatDialog
   ) {}
 
   public ngOnInit(): void {
@@ -53,7 +57,17 @@ export class DashboardPageComponent implements OnInit {
           parser: (data) => this.datePipe.transform(data.createdAt, 'medium')
         }
       ],
-      actions: []
+      actions: [
+        {
+          icon: 'info',
+          action: (tag) => this.matDialog.open<TagDetailModalData>(TagDetailModalComponent, {
+            data: { tag },
+            width: '100%',
+            maxWidth: '400px'
+          }),
+          tooltip: 'DASHBOARD.TAGS.OPEN_INFO_TOOLTIP'
+        }
+      ]
     };
   }
 }
