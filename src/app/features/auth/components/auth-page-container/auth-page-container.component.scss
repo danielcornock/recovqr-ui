@@ -11,7 +11,7 @@
 
     &__dialog {
         background-color: white;
-        padding: 3.2rem;
+        padding: 32px;
         border-radius: $br-med;
         width: 100%;
         max-width: 360px;
@@ -21,7 +21,7 @@
     &__heading {
         text-align: center;
         font-weight: 400;
-        font-size: 1.6rem;
+        font-size: 16px;
         color: $color-body;
         margin-bottom: 20px;
     }
