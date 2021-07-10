@@ -1,9 +1,22 @@
-<div class="authenticated-page-container__container">
-    <app-toolbar class="authenticated-page-container__toolbar"></app-toolbar>
-    
-    <div class="authenticated-page-container__scroll-view">
-        <div class="authenticated-page-container__content">
-            <router-outlet></router-outlet>
-        </div>
-    </div>
+<div class="authenticated-page-container__container" *ngIf="(userDetails$ | async) as userDetails">
+    <app-toolbar
+        class="authenticated-page-container__toolbar"
+        [heading]="pageTitle$ | async"
+        (toggleSideMenuState)="toggleSideMenu()"></app-toolbar>
+
+    <mat-sidenav-container style="height: 100%;">
+        <mat-sidenav [opened]="sideMenuOpen" mode="push">
+            <app-sidebar
+                [userName]="userDetails.name"
+                [userEmail]="userDetails.email"></app-sidebar>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <div class="authenticated-page-container__scroll-view">
+                <div class="authenticated-page-container__content">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
 </div>

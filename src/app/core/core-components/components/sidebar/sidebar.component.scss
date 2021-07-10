@@ -1,0 +1,75 @@
+@import 'src/scss/theme';
+
+$h-padding: 20px;
+
+.sidebar {
+    &__container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        min-width: 240px;
+    }
+
+    &__header {
+        background: linear-gradient(to bottom, $color-primary, $color-primary-alt);
+        padding: $h-padding;
+    }
+
+    &__branding {
+        display: flex;
+        align-items: center;
+        color: white;
+        margin-bottom: 20px;
+    }
+
+    &__branding-icon {
+        @include icon-size(28px);
+
+        transform: rotate(45deg);
+        margin-right: 8px;
+    }
+
+    &__branding-text {
+        font-size: 24px;
+        font-weight: 300;
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__nav-item {
+        color: $color-body;
+        text-decoration: none;
+        font-weight: 400;
+        padding: 12px $h-padding;
+        border-radius: $br-sm;
+        display: flex;
+        align-items: center;
+
+        &.is-active {
+            background-color: rgba(black, 0.1);
+        }
+
+        &:hover {
+            background-color: rgba(black, 0.1);
+        }
+    }
+
+    &__icon {
+        margin-right: 20px;
+    }
+
+    &__user-name {
+        color: $color-text-on-primary;
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+
+    &__user-email {
+        color: rgba($color-text-on-primary, 0.7);
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+}

@@ -1,5 +1,7 @@
 @import 'src/scss/theme';
 
+$mobile-breakpoint: 600px;
+
 .toolbar {
     &__container {
         padding: 12px 24px;
@@ -7,6 +9,10 @@
         box-shadow: 0 0 16px rgba(black, 0.2);
         display: flex;
         align-items: center;
+
+        @include media-phone {
+            padding: 16px 20px;
+        }
     }
 
     &__branding {
@@ -14,6 +20,21 @@
         align-items: center;
         color: white;
         margin-right: 32px;
+
+        @include media-phone {
+            display: none;
+        }
+    }
+
+    &__title {
+        display: none;
+        color: $color-text-on-primary;
+        font-size: 18px;
+        margin-bottom: 0;
+
+        @include media-phone {
+            display: block;
+        }
     }
 
     &__branding-icon {
@@ -31,6 +52,10 @@
     &__nav {
         display: flex;
         align-items: center;
+
+        @include media-phone {
+            display: none;
+        }
     }
 
     &__nav-item {
@@ -51,6 +76,26 @@
 
         & + & {
             margin-left: 8px;
+        }
+    }
+
+    &__menu-button {
+        color: $color-text-on-primary;
+        display: none;
+        background: transparent;
+        cursor: pointer;
+        border: 0;
+        padding: 0;
+        margin-right: 16px;
+
+        mat-icon {
+            @include icon-size(24px);
+
+            display: block !important;
+        }
+
+        @include media-phone {
+            display: block;
         }
     }
 }

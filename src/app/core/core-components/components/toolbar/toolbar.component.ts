@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DashboardRoutes } from 'src/app/features/dashboard/constants/dashboard-routes.constants';
+import { Maybe } from 'src/types/maybe.type';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,6 +9,12 @@ import { DashboardRoutes } from 'src/app/features/dashboard/constants/dashboard-
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ToolbarComponent implements OnInit {
+  @Input()
+  public heading: Maybe<string>;
+
+  @Output()
+  public toggleSideMenuState = new EventEmitter<void>();
+
   public navLinks: Array<{ link: string, label: string }>;
 
   public ngOnInit(): void {
@@ -25,5 +32,9 @@ export class ToolbarComponent implements OnInit {
         link: 'dashboard/preview'
       }
     ];
+  }
+
+  public toggleMenuOpen(): void {
+    this.toggleSideMenuState.emit();
   }
 }
