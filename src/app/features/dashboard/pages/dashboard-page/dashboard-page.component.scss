@@ -9,6 +9,11 @@
         justify-content: center;
         margin-bottom: 32px;
         position: relative;
+        flex-direction: column;
+    }
+
+    &__qr {
+        margin-bottom: 12px;
     }
 
     &__qr-download {
@@ -32,6 +37,13 @@
 
         &:hover {
             background-color: $color-primary-hover;
+        }
+
+        @include media-phone {
+            position: static;
+            display: flex;
+            justify-content: center;
+            padding: 12px 20px;
         }
     }
 
