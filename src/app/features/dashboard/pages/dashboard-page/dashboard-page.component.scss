@@ -9,11 +9,18 @@
         justify-content: center;
         margin-bottom: 32px;
         position: relative;
-        flex-direction: column;
+
+        @include media-phone {
+            flex-direction: column;
+        }
     }
 
     &__qr {
-        margin-bottom: 12px;
+        @include media-phone {
+            margin: 0 auto 12px;
+            width: 100%;
+            max-width: 240px;
+        }
     }
 
     &__qr-download {

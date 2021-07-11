@@ -1,19 +1,12 @@
 @import 'src/scss/theme';
 
-$header-height: 60px;
-$header-height-mobile: 56px;
-
 .authenticated-page-container {
     &__container {
         background-color: $color-background;
         height: 100%;
         display: flex;
         flex-direction: column;
-        padding-top: $header-height;
-
-        @include media-phone {
-            padding-top: $header-height-mobile;
-        }
+        overflow: hidden;
     }
 
     &__content {
@@ -32,13 +25,6 @@ $header-height-mobile: 56px;
             min-height: 100%;
             padding: 20px;
         }
-    }
-
-    &__toolbar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
     }
 
     &__scroll-view {

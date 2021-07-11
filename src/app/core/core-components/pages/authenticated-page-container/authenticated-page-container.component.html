@@ -5,7 +5,7 @@
         (toggleSideMenuState)="toggleSideMenu()"></app-toolbar>
 
     <mat-sidenav-container style="height: 100%;">
-        <mat-sidenav [opened]="sideMenuOpen" mode="push">
+        <mat-sidenav [(opened)]="sideMenuOpen" mode="push">
             <app-sidebar
                 [userName]="userDetails.name"
                 [userEmail]="userDetails.email"></app-sidebar>

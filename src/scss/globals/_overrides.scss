@@ -13,6 +13,10 @@ mat-form-field {
     &:last-of-type {
         margin-bottom: 16px;
     }
+
+    @include media-phone {
+        font-size: 16px !important;
+    }
 }
 
 mat-spinner {
