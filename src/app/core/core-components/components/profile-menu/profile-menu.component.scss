@@ -24,18 +24,36 @@
         align-items: center;
         justify-content: center;
         color: $color-primary;
-        background-color: $color-text-on-primary;
-        height: 32px;
-        width: 32px;
+        background-color: rgba($color-text-on-primary, 0.9);
+        height: 28px;
+        width: 28px;
         border-radius: $br-max;
         font-weight: bold;
         font-size: 15px;
-        border: 1px solid $color-primary;
+
+        mat-icon {
+            @include icon-size(22px);
+        }
+
+        &:hover {
+            background-color: $color-text-on-primary;
+        }
+
+        &.selected {
+            background-color: $color-primary;
+            color: $color-text-on-primary;
+        }
     }
 
-    &__icon {
-        color: rgba($color-text-on-primary, 0.7);
-        margin-left: 4px;
-        border-radius: $br-sm;
+    &__profile-item {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 12px 12px 12px 16px;
+        border-bottom: 1px solid $color-border-light;
+    }
+
+    &__name {
+        margin-right: 16px;
     }
 }

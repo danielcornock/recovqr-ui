@@ -10,12 +10,14 @@ export class ProfileMenuComponent implements OnInit {
   @Input()
   public set userName(name: string) {
     this.initials = name.split(' ').map((segment) => segment[0]).join('');
+    this.name = name;
   }
 
   @Output()
   public logOut = new EventEmitter<void>();
 
   public initials: string;
+  public name: string;
   public actions: Array<{ label: string, icon: string, action: () => void }>;
 
   public ngOnInit(): void {

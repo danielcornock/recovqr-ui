@@ -7,11 +7,12 @@ $h-padding: 20px;
         height: 100%;
         display: flex;
         flex-direction: column;
-        min-width: 280px;
+        max-width: 280px;
+        width: 90vw;
     }
 
     &__header {
-        background: linear-gradient(to bottom, $color-primary, $color-primary-alt);
+        background: $color-primary;
         padding: 24px $h-padding 20px;
     }
 
@@ -23,14 +24,14 @@ $h-padding: 20px;
     }
 
     &__branding-icon {
-        @include icon-size(32px);
+        @include icon-size(36px);
 
         transform: rotate(45deg);
         margin-right: 8px;
     }
 
     &__branding-text {
-        font-size: 28px;
+        font-size: 32px;
         font-weight: 300;
     }
 
@@ -64,7 +65,7 @@ $h-padding: 20px;
 
     &__user-name {
         color: $color-text-on-primary;
-        font-size: 16px;
+        font-size: 17px;
         margin-bottom: 0;
     }
 
@@ -72,5 +73,6 @@ $h-padding: 20px;
         color: rgba($color-text-on-primary, 0.7);
         font-size: 14px;
         margin-bottom: 0;
+        font-weight: 300;
     }
 }

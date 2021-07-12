@@ -2,7 +2,7 @@
 
 mat-form-field {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 
     mat-icon[matPrefix] {
         color: $color-primary;
@@ -49,6 +49,7 @@ mat-footer-cell:last-of-type {
 }
 
 .mat-menu-panel {
-    margin-top: 8px;
+    margin-top: -32px;
+    margin-right: -8px;
     min-height: initial !important;
 }

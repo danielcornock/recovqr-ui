@@ -1,14 +1,18 @@
 <button class="profile-menu__container" [matMenuTriggerFor]="menu">
     <div class="profile-menu__image">
-        {{ initials }}
+        <mat-icon>person</mat-icon>
     </div>
-
-    <mat-icon class="profile-menu__icon">
-        <mat-icon>expand_more</mat-icon>
-    </mat-icon>
 </button>
 
 <mat-menu #menu="matMenu">
+    <div class="profile-menu__profile-item">
+        <div class="profile-menu__name">
+            {{ name }}
+        </div>
+        <div class="profile-menu__image selected">
+            <mat-icon>person</mat-icon>
+        </div>
+    </div>
     <button mat-menu-item *ngFor="let item of actions" (click)="item.action()">
         <mat-icon>{{ item.icon }}</mat-icon>
         <span>{{ item.label | translate }}</span>
