@@ -2,7 +2,9 @@
     <app-toolbar
         class="authenticated-page-container__toolbar"
         [heading]="pageTitle$ | async"
-        (toggleSideMenuState)="toggleSideMenu()"></app-toolbar>
+        [userName]="userDetails.name"
+        (toggleSideMenuState)="toggleSideMenu()"
+        (logOut)="logOut()"></app-toolbar>
 
     <mat-sidenav-container style="height: 100%;">
         <mat-sidenav [(opened)]="sideMenuOpen" mode="push">

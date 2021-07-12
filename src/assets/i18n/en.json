@@ -4,6 +4,9 @@
         "EDIT_DETAILS": "Edit details",
         "PREVIEW": "Preview"
     },
+    "PROFILE_MENU": {
+        "LOG_OUT": "Log out"
+    },
     "INFO_FORM": {
         "CONTACT": {
             "HEADING": "Contact Information",

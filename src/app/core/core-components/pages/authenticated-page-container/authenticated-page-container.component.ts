@@ -2,8 +2,10 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
+import { AuthService } from 'src/app/core/core-authentication/services/auth/auth.service';
 import { AuthQuery } from 'src/app/core/core-authentication/store/auth.query';
 import { RouterService } from 'src/app/core/core-routing/services/router/router.service';
+import { AuthRoutes } from 'src/app/features/auth/constants/auth-routes.constant';
 import { Maybe } from 'src/types/maybe.type';
 
 @Component({
@@ -20,7 +22,8 @@ export class AuthenticatedPageContainerComponent implements OnInit {
   constructor(
     private authQuery: AuthQuery,
     private routerService: RouterService,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {
   }
   
@@ -39,5 +42,10 @@ export class AuthenticatedPageContainerComponent implements OnInit {
 
   public toggleSideMenu(): void {
     this.sideMenuOpen = !this.sideMenuOpen;
+  }
+
+  public logOut(): void {
+    this.authService.logOut();
+    this.router.navigate([AuthRoutes.Root, AuthRoutes.Login]);
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { catchError, finalize, tap } from 'rxjs/operators';
+import { catchError, finalize, first, tap } from 'rxjs/operators';
 import { AuthApiService } from 'src/app/core/core-authentication/services/auth-api/auth-api.service';
 import { StorageKeys } from 'src/app/core/core-storage/constants/storage-keys.constant';
 import { StorageService } from 'src/app/core/core-storage/services/storage/storage.service';
@@ -31,6 +31,7 @@ export class AuthService {
     this.authStore.setError(null);
 
     return this.authApiService.register(data).pipe(
+      first(),
       tap((response) => {
         this.storageService.setObject<AuthResponse>(StorageKeys.AuthInfo, response);
         this.authStore.setAuthDetails(response);
@@ -50,6 +51,7 @@ export class AuthService {
     this.authStore.setError(null);
 
     return this.authApiService.login(data).pipe(
+      first(),
       tap((response) => {
         this.authStore.setAuthDetails(response);
         this.storageService.setObject<AuthResponse>(StorageKeys.AuthInfo, response);
@@ -62,5 +64,10 @@ export class AuthService {
         this.authStore.setLoading(false);
       })
     );
+  }
+
+  public logOut(): void {
+    this.storageService.removeItem(StorageKeys.AuthInfo);
+    this.authStore.removeAuthDetails();
   }
 }

@@ -24,4 +24,8 @@ export class AuthStore extends Store<AuthState> {
   public setAuthDetails(authDetails: AuthResponse): void {
     this.update(() => authDetails);
   }
+
+  public removeAuthDetails(): void {
+    this.update(createInitialState);
+  }
 }

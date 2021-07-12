@@ -1,0 +1,41 @@
+@import 'src/scss/theme';
+
+.profile-menu {
+    $cmp: &;
+
+    &__container {
+        display: flex;
+        background: transparent;
+        border: 0;
+        padding: 0;
+        height: 100%;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+            #{$cmp}__icon {
+                background-color: rgba(black, 0.1);
+            }
+        }
+    }
+
+    &__image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $color-primary;
+        background-color: $color-text-on-primary;
+        height: 32px;
+        width: 32px;
+        border-radius: $br-max;
+        font-weight: bold;
+        font-size: 15px;
+        border: 1px solid $color-primary;
+    }
+
+    &__icon {
+        color: rgba($color-text-on-primary, 0.7);
+        margin-left: 4px;
+        border-radius: $br-sm;
+    }
+}

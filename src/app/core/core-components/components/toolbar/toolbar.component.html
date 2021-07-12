@@ -23,4 +23,9 @@
         </a>
     </nav>
     <!-- Non-mobile only end -->
+
+    <app-profile-menu
+        class="toolbar__profile-menu"
+        [userName]="userName"
+        (logOut)="logOut.emit()"></app-profile-menu>
 </div>

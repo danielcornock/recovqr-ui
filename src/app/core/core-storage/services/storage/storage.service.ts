@@ -25,4 +25,8 @@ export class StorageService {
 
     this.setItem(key, stringifiedObject);
   }
+
+  public removeItem(key: string): void {
+    localStorage.removeItem(key);
+  }
 }

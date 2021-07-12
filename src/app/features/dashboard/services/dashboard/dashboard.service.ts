@@ -61,6 +61,10 @@ export class DashboardService {
     this.dashboardStore.setLoading(true);
     this.dashboardStore.setError(null);
 
+    if (!confirm('Are you sure you want to delete this tag? You will not be able to recover any information from it.')) {
+      return;
+    }
+
     this.dashboardApiService.deleteTag(tagId).pipe(
       take(1),
       finalize(() => this.dashboardStore.setLoading(false))

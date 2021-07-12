@@ -12,8 +12,14 @@ export class ToolbarComponent implements OnInit {
   @Input()
   public heading: Maybe<string>;
 
+  @Input()
+  public userName: string;
+
   @Output()
   public toggleSideMenuState = new EventEmitter<void>();
+
+  @Output()
+  public logOut = new EventEmitter<void>();
 
   public navLinks: Array<{ link: string, label: string }>;
 

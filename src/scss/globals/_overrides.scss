@@ -43,3 +43,12 @@ mat-footer-cell:last-of-type {
     padding-bottom: 16px;
     border-bottom: 1px solid $color-border-light;
 }
+
+.mat-menu-content {
+    padding: 0 !important;
+}
+
+.mat-menu-panel {
+    margin-top: 8px;
+    min-height: initial !important;
+}
