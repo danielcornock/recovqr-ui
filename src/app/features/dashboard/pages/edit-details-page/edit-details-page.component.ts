@@ -33,15 +33,14 @@ export class EditDetailsPageComponent implements OnInit {
 
     this.form$ = combineLatest([
       this.informationQuery.getInformation(),
-      this.authQuery.getUserDetails(),
       this.isLoading$
     ]).pipe(
-      filter(([_, __, isLoading]) => !isLoading),
+      filter(([_, isLoading]) => !isLoading),
       take(1),
-      map(([information, authDetails]) => {
+      map(([information]) => {
         return this.formBuilder.group({
-          name: [information.name || authDetails.name],
-          email: [information.email || authDetails.email],
+          name: [information.name],
+          email: [information.email],
           country: [information.country],
           telephone: [information.telephone],
           message: [information.message]
