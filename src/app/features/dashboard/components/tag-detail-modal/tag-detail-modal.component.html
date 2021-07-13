@@ -1,6 +1,8 @@
 <div class="tag-detail-modal__container">
     <h2 mat-dialog-title>{{ translateKey + 'HEADING' | translate }}</h2>
 
+    <app-form-error [error]="warning"></app-form-error>
+
     <div class="tag-detail-modal__section">
         <p class="u-label">{{ translateKey + 'ADDRESS' | translate }}</p>
         <p class="tag-detail-modal__address u-value">{{ formattedAddress }}</p>

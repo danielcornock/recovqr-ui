@@ -13,6 +13,7 @@ export class TagDetailModalComponent implements OnInit {
   public tag: Tag;
   public formattedAddress: string;
   public mapUrl: string;
+  public warning: { message: string } | null;
 
   public readonly translateKey = 'DASHBOARD.TAG_MODAL.';
 
@@ -25,6 +26,7 @@ export class TagDetailModalComponent implements OnInit {
     this.tag = this.dialogData.tag;
     this.formattedAddress = this.tag.address.join(', ');
     this.generateMapUrl();
+    this.setWarningMessage();
   }
 
   public openInMap(): void {
@@ -34,5 +36,11 @@ export class TagDetailModalComponent implements OnInit {
   private generateMapUrl(): void {
     const { latitude, longitude } = this.tag.coordinates;
     this.mapUrl = `https://maps.google.com/maps?q=${latitude},%20${longitude}&amp;t=&amp;z=10&amp;ie=UTF8&amp;iwloc=&amp;output=embed`;
+  }
+
+  private setWarningMessage(): void {
+    if (!this.tag.locationIsAccurate) {
+      this.warning = { message: 'DASHBOARD.TAG_MODAL.NOT_ACCURATE' };
+    }
   }
 }

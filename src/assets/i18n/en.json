@@ -55,7 +55,8 @@
             "ADDRESS": "Address",
             "DATE": "Date",
             "TIME": "Time",
-            "OPEN_IN_MAPS": "Open in google maps"
+            "OPEN_IN_MAPS": "Open in google maps",
+            "NOT_ACCURATE": "This address information was gathered using an IP address, so the results are likely inaccurate."
         }
     },
     "PREVIEW": {
