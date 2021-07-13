@@ -24,7 +24,10 @@
         border-radius: $br-sm;
         display: block;
         overflow-y: auto;
-        flex: 1 1 100%;
+
+        @include media-phone {
+            flex: 1 1 100%;
+        }
     }
 
     &__branding {
