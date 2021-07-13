@@ -11,10 +11,15 @@ export class GeolocationService {
       positionSubject.next(null);
     }
 
-    navigator.geolocation.getCurrentPosition((position: GeolocationPosition) => {
-      const { latitude, longitude } = position.coords;
-      positionSubject.next({ latitude, longitude });
-    });
+    navigator.geolocation.getCurrentPosition(
+      (position: GeolocationPosition) => {
+        const { latitude, longitude } = position.coords;
+        positionSubject.next({ latitude, longitude });
+      },
+      () => {
+        positionSubject.next(null);
+      }
+    );
 
     return positionSubject.asObservable();
   }
