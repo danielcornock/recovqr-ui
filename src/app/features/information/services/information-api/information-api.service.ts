@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Coordinates } from 'src/app/core/core-app/interfaces/coordinates.interface';
-import { InformationResponse } from 'src/app/features/dashboard/interfaces/information-response.interface';
+import { InformationResponse } from 'src/app/shared/information-library/interfaces/information-response.interface';
 import { InformationEndpoints } from '../../constants/information-endpoints.constant';
 
 @Injectable()

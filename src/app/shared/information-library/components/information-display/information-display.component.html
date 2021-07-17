@@ -2,12 +2,18 @@
     <p class="information-display__message" *ngIf="information.message" [innerHTML]="information.message"></p>
     <div class="information-display__fields">
         <ng-container *ngFor="let field of informationFields">
-            <div *ngIf="field.value" class="information-display__section">
+            <div
+                *ngIf="field.value"
+                class="information-display__section"
+                [attr.aria-role]="field.action ? 'button' : ''"
+                [class.is-clickable]="field.action"
+                (click)="field.action && field.action()">
                 <mat-icon class="information-display__icon" color="primary">{{ field.icon }}</mat-icon>
                 <div class="information-display__section-content">
                     <p class="u-label">{{ field.label | translate }}</p>
                     <p class="u-value">{{ field.value }}</p>
                 </div>
+                <mat-icon *ngIf="field.action" class="information-display__open-icon">open_in_new</mat-icon>
             </div>
         </ng-container>
     </div>

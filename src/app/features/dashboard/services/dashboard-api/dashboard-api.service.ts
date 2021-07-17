@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { InformationResponse } from '../../../../shared/information-library/interfaces/information-response.interface';
 import { DashboardEndpoints } from '../../constants/dashboard-endpoints.constant';
-import { InformationResponse } from '../../interfaces/information-response.interface';
 import { QrCodeResponse } from '../../interfaces/qr-code-response.interface';
 import { Tag } from '../../interfaces/tag.interface';
 

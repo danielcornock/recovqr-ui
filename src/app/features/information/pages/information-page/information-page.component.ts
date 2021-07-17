@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { GeolocationService } from 'src/app/core/core-app/services/geolocation/geolocation.service';
-import { InformationResponse } from 'src/app/features/dashboard/interfaces/information-response.interface';
+import { InformationResponse } from 'src/app/shared/information-library/interfaces/information-response.interface';
 import { InformationRouteParams } from '../../constants/information-routes.constant';
 import { InformationApiService } from '../../services/information-api/information-api.service';
 

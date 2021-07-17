@@ -1,5 +1,5 @@
 import { Store, StoreConfig } from '@datorama/akita';
-import { InformationResponse } from '../interfaces/information-response.interface';
+import { InformationResponse } from '../../../shared/information-library/interfaces/information-response.interface';
 import { Tag } from '../interfaces/tag.interface';
 
 export interface InformationState {
@@ -15,7 +15,8 @@ export function createInitialState(): InformationState {
       email: '',
       telephone: '',
       country: '',
-      message: ''
+      message: '',
+      twitter: ''
     },
     tags: []
   };

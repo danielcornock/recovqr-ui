@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ValidationErrors } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ValidationErrors } from '@angular/forms';
 import { combineLatest, Observable } from 'rxjs';
 import { filter, map, take } from 'rxjs/operators';
 import { AuthQuery } from 'src/app/core/core-authentication/store/auth.query';
@@ -43,7 +43,8 @@ export class EditDetailsPageComponent implements OnInit {
           email: [information.email],
           country: [information.country],
           telephone: [information.telephone],
-          message: [information.message]
+          message: [information.message],
+          twitter: [information.twitter, this.twitterHandleValidator]
         }, {
           validators: this.formValidator.bind(this)
         });
@@ -67,5 +68,13 @@ export class EditDetailsPageComponent implements OnInit {
     }
 
     return { message: 'INFO_FORM.ERRORS.ATLEAST_ONE' };
+  }
+
+  private twitterHandleValidator(control: FormControl): ValidationErrors | null {
+    if (!control.value || !control.value.includes('@')) {
+      return null;
+    }
+
+    return { customError: 'INFO_FORM.VALIDATORS.NO_AT_SYMBOL' };
   }
 }

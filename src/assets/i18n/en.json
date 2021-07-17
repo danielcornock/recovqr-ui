@@ -21,7 +21,8 @@
             "COUNTRY": "Country",
             "PHONE": "Telephone number",
             "EMAIL": "Email address",
-            "MESSAGE": "Personalised message"
+            "MESSAGE": "Personalised message",
+            "TWITTER": "Twitter username"
         },
         "ERRORS": {
             "ATLEAST_ONE": "At least one of the following fields must be filled in."
@@ -29,7 +30,10 @@
         "TOASTS": {
             "SUCCESS": "Information successfully updated"
         },
-        "SAVE": "Save contact information"
+        "SAVE": "Save contact information",
+        "VALIDATORS": {
+            "NO_AT_SYMBOL": "No need to include the '@' symbol in your username."
+        }
     },
     "DASHBOARD": {
         "QR": {
@@ -68,7 +72,8 @@
         "COUNTRY": "Country",
         "EMAIL": "Email address",
         "PHONE": "Telephone number",
-        "MESSAGE": "Message"
+        "MESSAGE": "Message",
+        "TWITTER": "Twitter"
     },
     "AUTH": {
         "FIELDS": {

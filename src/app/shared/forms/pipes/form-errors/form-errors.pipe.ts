@@ -13,6 +13,10 @@ export class FormErrorsPipe implements PipeTransform {
     if (typeof errors === 'string') {
       return errors;
     }
+    
+    if (errors.customError) {
+      return errors.customError as string;
+    }
 
     const errorKeys = Object.keys(errors);
 

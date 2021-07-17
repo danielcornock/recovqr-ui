@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { finalize, take } from 'rxjs/operators';
-import { InformationResponse } from '../../interfaces/information-response.interface';
+import { InformationResponse } from '../../../../shared/information-library/interfaces/information-response.interface';
 import { DashboardApiService } from '../../services/dashboard-api/dashboard-api.service';
 
 @Component({
