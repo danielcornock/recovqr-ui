@@ -16,7 +16,10 @@
     }
 
     &__qr {
+        height: 180px;
+
         @include media-phone {
+            height: auto;
             margin: 0 auto 12px;
             width: 100%;
             max-width: 240px;
@@ -69,5 +72,23 @@
 
             margin-right: 8px;
         }
+    }
+
+    &__qr-section {
+        position: relative;
+    }
+
+    &__button-right {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+    }
+
+    &__button-left {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
     }
 }

@@ -1,5 +1,6 @@
 import { CommonModule, DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AppCommonModule } from 'src/app/common/common.module';
 import { AppFormsModule } from 'src/app/shared/forms/forms.module';
@@ -31,7 +32,8 @@ import { DashboardStore } from './store/dashboard.store';
     AppFormsModule,
     InformationLibraryModule,
     TableModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [
     DashboardApiService,

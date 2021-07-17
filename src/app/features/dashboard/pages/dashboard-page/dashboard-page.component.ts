@@ -17,9 +17,10 @@ import { DashboardQueryService } from '../../store/dashboard.query';
   styleUrls: ['./dashboard-page.component.scss']
 })
 export class DashboardPageComponent implements OnInit {
-  public qrCode$: Observable<string>;
+  public qrCodes$: Observable<string[]>;
   public isLoading$ = new BehaviorSubject<boolean>(true);
   public tags$: Observable<Tag[]>;
+  public selectedQrIndex = 0;
 
   public tableOptions: TableOptions<Tag>;
 
@@ -46,7 +47,15 @@ export class DashboardPageComponent implements OnInit {
       finalize(() => this.isLoading$.next(false))
     );
 
-    this.qrCode$ = data$.pipe(map(([_, qrRes]) => qrRes.qrCode));
+    this.qrCodes$ = data$.pipe(map(([_, qrRes]) => qrRes.qrCodes));
+  }
+
+  public viewNextQrCode(): void {
+    this.selectedQrIndex++;
+  }
+
+  public viewPreviousQrCode(): void {
+    this.selectedQrIndex--;
   }
 
   private createTable(): void {

@@ -1,17 +1,33 @@
 
-<ng-container *ngIf="{ qrCode: qrCode$ | async, tags: tags$ | async } as data">
+<ng-container *ngIf="{ qrCodes: qrCodes$ | async, tags: tags$ | async } as data">
     <div class="dashboard-page__container" *ngIf="(isLoading$ | async) === false">
-        <section>
+        <section *ngIf="data.qrCodes" class="dashboard-page__qr-section">
             <h2>{{ 'DASHBOARD.QR.HEADING' | translate }}</h2>
             <p>{{ 'DASHBOARD.QR.MESSAGE' | translate }}</p>
     
             <div class="dashboard-page__qr-container">
-                <img class="dashboard-page__qr" [src]="data.qrCode" alt="Your personal QR code.">
-                <a class="dashboard-page__qr-download" [href]="data.qrCode" download="recovqr-qr-code">
+                <img class="dashboard-page__qr" [src]="data.qrCodes[selectedQrIndex]" alt="Your personal QR code.">
+                <a class="dashboard-page__qr-download" [href]="data.qrCodes[selectedQrIndex]" download="recovqr-qr-code">
                     <mat-icon>file_download</mat-icon>
                     <span>{{ 'DASHBOARD.QR.DOWNLOAD' | translate }}</span>
                 </a>
             </div>
+
+            <button
+                *ngIf="selectedQrIndex > 0"
+                class="dashboard-page__button-left"
+                mat-icon-button
+                (click)="viewPreviousQrCode()">
+                <mat-icon>chevron_left</mat-icon>
+            </button>
+
+            <button
+                *ngIf="selectedQrIndex < data.qrCodes.length - 1"
+                class="dashboard-page__button-right"
+                mat-icon-button
+                (click)="viewNextQrCode()">
+                <mat-icon>chevron_right</mat-icon>
+            </button>
         </section>
         <section>
             <h2>{{ 'DASHBOARD.TAGS.HEADING' | translate }}</h2>
