@@ -53,3 +53,15 @@ mat-footer-cell:last-of-type {
     margin-right: -8px;
     min-height: initial !important;
 }
+
+.mat-paginator-page-size {
+    height: 54px !important;
+
+    .mat-form-field-infix {
+        padding: 4px 0 6px 0 !important;
+
+        @include media-phone {
+            padding-top: 0px !important;
+        }
+    }
+}

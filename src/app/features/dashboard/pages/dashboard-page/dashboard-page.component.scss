@@ -57,23 +57,6 @@
         }
     }
 
-    &__no-tags {
-        color: $color-body-light;
-        text-align: center;
-        font-size: 13px;
-        font-weight: 300;
-        margin-top: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        mat-icon {
-            @include icon-size(20px);
-
-            margin-right: 8px;
-        }
-    }
-
     &__qr-section {
         position: relative;
     }

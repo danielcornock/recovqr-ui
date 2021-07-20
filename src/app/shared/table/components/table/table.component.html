@@ -34,3 +34,8 @@
     *matRowDef="let row; columns: columns"
     class="table__row"></mat-row>
 </mat-table>
+
+<p *ngIf="!items?.length" class="table__no-items">
+  <mat-icon>info_outline</mat-icon>
+  {{ 'TABLE.EMPTY' | translate }}
+</p>

@@ -1,0 +1,15 @@
+<ng-container *ngIf="{ pagination: paginationResponse$ | async, query: query$ | async } as tableData">
+    <app-table
+      *ngIf="tableData.pagination"
+      [items]="tableData.pagination.data"
+      [tableOptions]="paginatedTableOptions"></app-table>
+  
+    <mat-paginator
+      class="paginated-table__paginator"
+      [length]="tableData.pagination?.count"
+      [pageSize]="tableData.query?.pageSize"
+      [pageIndex]="tableData.query?.page"
+      (page)="onPaginationChange($event)"
+      [pageSizeOptions]="[10, 20, 50]"
+    ></mat-paginator>
+  </ng-container>

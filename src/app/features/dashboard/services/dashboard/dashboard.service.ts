@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { finalize, take } from 'rxjs/operators';
+import { finalize } from 'rxjs/operators';
 import { SnackbarService } from 'src/app/common/services/snackbar/snackbar.service';
 import { InformationResponse } from '../../../../shared/information-library/interfaces/information-response.interface';
 import { DashboardStore } from '../../store/dashboard.store';
@@ -41,39 +41,6 @@ export class DashboardService {
         this.dashboardStore.setError(error.data);
         this.dashboardStore.setLoading(false);
       }
-    });
-  }
-
-  public fetchTags(): void {
-    this.dashboardStore.setLoading(true);
-    this.dashboardStore.setError(null);
-
-    this.dashboardApiService.getTagList().pipe(
-      take(1),
-      finalize(() => this.dashboardStore.setLoading(false))
-    ).subscribe({
-      next: (response) => this.dashboardStore.setTags(response),
-      error: (error) => this.dashboardStore.setError(error.data)
-    });
-  }
-
-  public deleteTag(tagId: string): void {
-    this.dashboardStore.setLoading(true);
-    this.dashboardStore.setError(null);
-
-    if (!confirm('Are you sure you want to delete this tag? You will not be able to recover any information from it.')) {
-      return;
-    }
-
-    this.dashboardApiService.deleteTag(tagId).pipe(
-      take(1),
-      finalize(() => this.dashboardStore.setLoading(false))
-    ).subscribe({
-      next: () => {
-        this.dashboardStore.removeTag(tagId);
-        this.snackbarService.success('DASHBOARD.TAGS.DELETE_TOAST');
-      },
-      error: () => this.snackbarService.error()
     });
   }
 }

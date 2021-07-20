@@ -44,7 +44,6 @@
         "TAGS": {
             "HEADING": "Your Latest Tags",
             "MESSAGE": "See the latest scans for your devices.",
-            "EMPTY": "No tags reported to date",
             "OPEN_INFO_TOOLTIP": "View more information",
             "DELETE_TOAST": "Tag successfully deleted",
             "DELETE_TOOLTIP": "Delete tag",
@@ -100,5 +99,8 @@
         "EMAIL": "Must be a valid email address",
         "MIN_LENGTH": "Not enough characters",
         "GENERIC": "Something went wrong"
+    },
+    "TABLE": {
+        "EMPTY": "No entries"
     }
 }

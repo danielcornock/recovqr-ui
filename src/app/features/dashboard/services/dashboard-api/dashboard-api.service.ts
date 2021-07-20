@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { PaginationQuery } from 'src/app/core/core-http/interfaces/pagination-query.interface';
+import { PaginationResponse } from 'src/app/core/core-http/interfaces/pagination-response.interface';
 import { InformationResponse } from '../../../../shared/information-library/interfaces/information-response.interface';
 import { DashboardEndpoints } from '../../constants/dashboard-endpoints.constant';
 import { QrCodeResponse } from '../../interfaces/qr-code-response.interface';
@@ -20,6 +22,10 @@ export class DashboardApiService {
 
   public getOwnQrCode(): Observable<QrCodeResponse> {
     return this.httpClient.get<QrCodeResponse>(DashboardEndpoints.QrCode());
+  }
+
+  public getPaginatedTagList(query: PaginationQuery): Observable<PaginationResponse<Tag>> {
+    return this.httpClient.get<PaginationResponse<Tag>>(DashboardEndpoints.Tags(), { params: { ...query } });
   }
 
   public getTagList(): Observable<Tag[]> {

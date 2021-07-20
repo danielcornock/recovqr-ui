@@ -1,5 +1,5 @@
 
-<ng-container *ngIf="{ qrCodes: qrCodes$ | async, tags: tags$ | async } as data">
+<ng-container *ngIf="{ qrCodes: qrCodes$ | async } as data">
     <div class="dashboard-page__container" *ngIf="(isLoading$ | async) === false">
         <section *ngIf="data.qrCodes" class="dashboard-page__qr-section">
             <h2>{{ 'DASHBOARD.QR.HEADING' | translate }}</h2>
@@ -33,11 +33,7 @@
             <h2>{{ 'DASHBOARD.TAGS.HEADING' | translate }}</h2>
             <p>{{ 'DASHBOARD.TAGS.MESSAGE' | translate }}</p>
     
-            <app-table [items]="data.tags || []" [tableOptions]="tableOptions"></app-table>
-            <p *ngIf="!data.tags?.length" class="dashboard-page__no-tags">
-                <mat-icon>info_outline</mat-icon>
-                {{ 'DASHBOARD.TAGS.EMPTY' | translate }}
-            </p>
+            <app-paginated-table [paginationInstance]="paginationInstance" [paginatedTableOptions]="tableOptions"></app-paginated-table>
         </section>
     </div>
 </ng-container>

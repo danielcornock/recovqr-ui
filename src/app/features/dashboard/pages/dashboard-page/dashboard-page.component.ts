@@ -2,7 +2,9 @@ import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { filter, finalize, map, take } from 'rxjs/operators';
+import { filter, finalize, first, map, take } from 'rxjs/operators';
+import { PaginationQuery } from 'src/app/core/core-http/interfaces/pagination-query.interface';
+import { PaginationInstance } from 'src/app/shared/table/classes/pagination-instance';
 import { TableOptions } from 'src/app/shared/table/interfaces/table-options.interface';
 import { TagDetailModalData } from '../../components/tag-detail-modal/interfaces/tag-detail-modal-data.interface';
 import { TagDetailModalComponent } from '../../components/tag-detail-modal/tag-detail-modal.component';
@@ -23,6 +25,7 @@ export class DashboardPageComponent implements OnInit {
   public selectedQrIndex = 0;
 
   public tableOptions: TableOptions<Tag>;
+  public paginationInstance: PaginationInstance<Tag>;
 
   constructor(
     private dashboardApiService: DashboardApiService,
@@ -33,10 +36,19 @@ export class DashboardPageComponent implements OnInit {
   ) {}
 
   public ngOnInit(): void {
+    this.paginationInstance = PaginationInstance.create({
+      method: (query: PaginationQuery) => {
+        return this.dashboardApiService.getPaginatedTagList(query);
+      },
+      initialQuery: {
+        pageSize: 10,
+        page: 0
+      }
+    });
+
     this.isLoading$.next(true);
     this.createTable();
     this.tags$ = this.dashboardQueryService.getTags();
-    this.dashboardService.fetchTags();
 
     const data$ = combineLatest([
       this.dashboardQueryService.selectLoading(),
@@ -77,7 +89,13 @@ export class DashboardPageComponent implements OnInit {
         {
           icon: 'delete',
           action: (tag) => {
-            this.dashboardService.deleteTag(tag._id);
+            if (!confirm('Are you sure you want to delete this tag? You will not be able to recover any information from it.')) {
+              return;
+            }
+
+            this.dashboardApiService.deleteTag(tag._id).pipe(first()).subscribe(() => {
+              this.paginationInstance.removeById(tag._id);
+            });
           },
           tooltip: 'DASHBOARD.TAGS.DELETE_TOOLTIP'
         },
