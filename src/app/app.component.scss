@@ -3,5 +3,14 @@
 .app {
     &__container {
         height: 100%;
+        position: relative;
+    }
+
+    &__spinner {
+        position: absolute !important;
+        top: 50%;
+        left: 50%;
+        z-index: 50000;
+        transform: translate(-50%, -50%) scale(0.4);
     }
 }
