@@ -54,7 +54,7 @@ mat-footer-cell:last-of-type {
         padding: 4px 0 6px 0 !important;
 
         @include media-phone {
-            padding-top: 0px !important;
+            padding-top: 0 !important;
         }
     }
 }

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { filter, finalize, first, map, take } from 'rxjs/operators';
+import { SnackbarService } from 'src/app/common/services/snackbar/snackbar.service';
 import { PaginationQuery } from 'src/app/core/core-http/interfaces/pagination-query.interface';
 import { PaginationInstance } from 'src/app/shared/table/classes/pagination-instance';
 import { TableOptions } from 'src/app/shared/table/interfaces/table-options.interface';
@@ -32,7 +33,8 @@ export class DashboardPageComponent implements OnInit {
     private dashboardService: DashboardService,
     private dashboardQueryService: DashboardQueryService,
     private datePipe: DatePipe,
-    private matDialog: MatDialog
+    private matDialog: MatDialog,
+    private snackbarService: SnackbarService
   ) {}
 
   public ngOnInit(): void {
@@ -95,6 +97,7 @@ export class DashboardPageComponent implements OnInit {
 
             this.dashboardApiService.deleteTag(tag._id).pipe(first()).subscribe(() => {
               this.paginationInstance.removeById(tag._id);
+              this.snackbarService.success('DASHBOARD.TAGS.DELETE_TOAST');
             });
           },
           tooltip: 'DASHBOARD.TAGS.DELETE_TOOLTIP'

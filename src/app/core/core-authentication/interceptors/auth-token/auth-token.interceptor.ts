@@ -3,7 +3,7 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { mergeMap } from 'rxjs/operators';
+import { mergeMap, take } from 'rxjs/operators';
 import { AuthQuery } from '../../store/auth.query';
 
 @Injectable()
@@ -12,6 +12,7 @@ export class AuthTokenInterceptor implements HttpInterceptor {
 
   public intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     return this.authQuery.getAuthToken().pipe(
+      take(1),
       mergeMap((token) => {
         request = request.clone({
           setHeaders: {
