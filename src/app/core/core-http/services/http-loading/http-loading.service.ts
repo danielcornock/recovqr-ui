@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class HttpLoadingService {
   private loadingMap = new Map<string, boolean>();
   private loadingSubject = new BehaviorSubject<boolean>(false);

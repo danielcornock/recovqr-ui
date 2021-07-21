@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 import { AuthRoutes } from 'src/app/features/auth/constants/auth-routes.constant';
 import { AuthQuery } from '../../store/auth.query';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AuthGuard implements CanActivate {
   constructor(private authQuery: AuthQuery, private router: Router) {}
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class StorageService {
   public getItem(key: string): string | null {
     return localStorage.getItem(key);

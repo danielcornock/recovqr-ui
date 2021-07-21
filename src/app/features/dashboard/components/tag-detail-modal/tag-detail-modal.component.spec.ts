@@ -8,9 +8,9 @@ describe('TagDetailModalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TagDetailModalComponent ]
+      declarations: [TagDetailModalComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

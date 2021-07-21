@@ -3,7 +3,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { filter, map, mergeMap, shareReplay, startWith } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class RouterService {
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 

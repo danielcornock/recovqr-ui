@@ -8,9 +8,9 @@ describe('ProfileMenuComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProfileMenuComponent ]
+      declarations: [ProfileMenuComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

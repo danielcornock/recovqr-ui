@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class I18nService {
   constructor(private translate: TranslateService) {}
 

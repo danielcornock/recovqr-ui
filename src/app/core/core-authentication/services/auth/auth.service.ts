@@ -8,7 +8,7 @@ import { AuthResponse } from 'src/app/features/auth/interfaces/auth-response.int
 import { RegisterPayload } from 'src/app/features/auth/interfaces/register-payload.interface';
 import { AuthStore } from '../../store/auth.store';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AuthService {
   constructor(
     private authStore: AuthStore,

@@ -3,7 +3,6 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { LoadingInterceptor } from './interceptors/loading/loading.interceptor';
 import { ApiUrlProvider } from './providers/api-url.provider';
-import { HttpLoadingService } from './services/http-loading/http-loading.service';
 
 @NgModule({
   declarations: [],
@@ -12,7 +11,6 @@ import { HttpLoadingService } from './services/http-loading/http-loading.service
   ],
   providers: [
     ApiUrlProvider,
-    HttpLoadingService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: LoadingInterceptor,

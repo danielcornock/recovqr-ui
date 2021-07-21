@@ -6,7 +6,7 @@ import { AuthResponse } from '../../../../features/auth/interfaces/auth-response
 import { LoginPayload } from '../../../../features/auth/interfaces/login-payload.interface';
 import { RegisterPayload } from '../../../../features/auth/interfaces/register-payload.interface';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AuthApiService {
   constructor(
     private httpClient: HttpClient

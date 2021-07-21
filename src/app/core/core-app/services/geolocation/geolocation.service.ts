@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs';
 import { Coordinates } from '../../interfaces/coordinates.interface';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class GeolocationService {
   public getLocation(): Observable<Coordinates | null> {
     const positionSubject = new ReplaySubject<Coordinates | null>(1);
