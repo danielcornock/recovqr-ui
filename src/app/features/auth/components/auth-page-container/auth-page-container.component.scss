@@ -7,6 +7,10 @@
         align-items: center;
         justify-content: center;
         height: 100%;
+
+        @include media-phone {
+            display: block;
+        }
     }
 
     &__dialog {
@@ -16,6 +20,13 @@
         width: 100%;
         max-width: 360px;
         box-shadow: 0 0 16px rgba(black, 0.15);
+        overflow-y: auto;
+
+        @include media-phone {
+            padding: 32px 20px;
+            border-radius: 0;
+            height: 100%;
+        }
     }
 
     &__heading {
