@@ -8,6 +8,7 @@ import { CoreAppModule } from './core/core-app/core-app.module';
 import { CoreAuthenticationModule } from './core/core-authentication/authentication.module';
 import { CoreComponentsModule } from './core/core-components/core-components.module';
 import { CoreHttpModule } from './core/core-http/core-http.module';
+import { CoreNotificationModule } from './core/core-notification/core-notification.module';
 import { CoreRoutingModule } from './core/core-routing/core-routing.module';
 import { CoreStorageModule } from './core/core-storage/core-storage.module';
 import { CoreTranslateModule } from './core/core-translate/core-translate.module';
@@ -27,7 +28,8 @@ import { CoreTranslateModule } from './core/core-translate/core-translate.module
     CoreRoutingModule,
     CoreStorageModule,
     CoreAppModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    CoreNotificationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

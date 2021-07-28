@@ -2,9 +2,12 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { TranslateService } from '@ngx-translate/core';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class SnackbarService {
-  constructor(private snackbar: MatSnackBar, private translateService: TranslateService) {}
+  constructor(
+    private snackbar: MatSnackBar,
+    private translateService: TranslateService
+  ) {}
 
   public success(translation: string): void {
     const message = this.translateService.instant(translation);

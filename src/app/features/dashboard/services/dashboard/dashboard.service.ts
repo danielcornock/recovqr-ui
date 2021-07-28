@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { finalize } from 'rxjs/operators';
-import { SnackbarService } from 'src/app/common/services/snackbar/snackbar.service';
+import { SnackbarService } from 'src/app/core/core-notification/services/snackbar/snackbar.service';
 import { InformationResponse } from '../../../../shared/information-library/interfaces/information-response.interface';
 import { DashboardStore } from '../../store/dashboard.store';
 import { DashboardApiService } from '../dashboard-api/dashboard-api.service';
