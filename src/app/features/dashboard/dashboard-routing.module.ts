@@ -2,24 +2,22 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardRoutes } from './constants/dashboard-routes.constants';
-import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
-import { EditDetailsPageComponent } from './pages/edit-details-page/edit-details-page.component';
-import { PreviewPageComponent } from './pages/preview-page/preview-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: DashboardPageComponent,
+    loadChildren: () => import('./pages/dashboard-page/dashboard-page.module').then((m) => m.DashboardPageModule),
     data: { heading: 'NAVIGATION.DASHBOARD' }
   },
   {
     path: DashboardRoutes.EditProfile,
-    component: EditDetailsPageComponent,
+    loadChildren: () => import('./pages/edit-details-page/edit-details-page.module').then((m) => m.EditDetailsPageModule),
     data: { heading: 'NAVIGATION.EDIT_DETAILS' }
   },
   {
     path: DashboardRoutes.Preview,
-    component: PreviewPageComponent,
+    loadChildren: () => import('./pages/preview-page/preview-page.module').then((m) => m.PreviewPageModule),
+
     data: { heading: 'NAVIGATION.PREVIEW' }
   }
 ];

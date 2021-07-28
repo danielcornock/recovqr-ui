@@ -3,15 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { filter, finalize, first, map, take } from 'rxjs/operators';
-import { SnackbarService } from 'src/app/common/services/snackbar/snackbar.service';
 import { PaginationQuery } from 'src/app/core/core-http/interfaces/pagination-query.interface';
+import { SnackbarService } from 'src/app/core/core-notification/services/snackbar/snackbar.service';
 import { PaginationInstance } from 'src/app/shared/table/classes/pagination-instance';
 import { TableOptions } from 'src/app/shared/table/interfaces/table-options.interface';
-import { TagDetailModalData } from '../../components/tag-detail-modal/interfaces/tag-detail-modal-data.interface';
-import { TagDetailModalComponent } from '../../components/tag-detail-modal/tag-detail-modal.component';
+import { TagDetailModalData } from '../../../../shared/dashboard-library/components/tag-detail-modal/interfaces/tag-detail-modal-data.interface';
+import { TagDetailModalComponent } from '../../../../shared/dashboard-library/components/tag-detail-modal/tag-detail-modal.component';
 import { Tag } from '../../interfaces/tag.interface';
 import { DashboardApiService } from '../../services/dashboard-api/dashboard-api.service';
-import { DashboardService } from '../../services/dashboard/dashboard.service';
 import { DashboardQueryService } from '../../store/dashboard.query';
 
 @Component({
@@ -30,7 +29,6 @@ export class DashboardPageComponent implements OnInit {
 
   constructor(
     private dashboardApiService: DashboardApiService,
-    private dashboardService: DashboardService,
     private dashboardQueryService: DashboardQueryService,
     private datePipe: DatePipe,
     private matDialog: MatDialog,

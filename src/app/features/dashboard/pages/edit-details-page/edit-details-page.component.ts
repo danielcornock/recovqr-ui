@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ValidationErrors } from '@angular/forms';
 import { combineLatest, Observable } from 'rxjs';
 import { filter, map, take } from 'rxjs/operators';
-import { AuthQuery } from 'src/app/core/core-authentication/store/auth.query';
 import { ApiErrorResponse } from 'src/app/core/core-http/interfaces/api-error-response.interface';
 import { DashboardService } from '../../services/dashboard/dashboard.service';
 import { DashboardQueryService } from '../../store/dashboard.query';
@@ -21,8 +20,7 @@ export class EditDetailsPageComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private informationQuery: DashboardQueryService,
-    private informationService: DashboardService,
-    private authQuery: AuthQuery
+    private informationService: DashboardService
   ) { }
 
   public ngOnInit(): void {

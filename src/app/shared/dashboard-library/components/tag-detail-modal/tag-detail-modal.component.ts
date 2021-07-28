@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Tag } from '../../interfaces/tag.interface';
+import { Tag } from '../../../../features/dashboard/interfaces/tag.interface';
 import { TagDetailModalData } from './interfaces/tag-detail-modal-data.interface';
 
 @Component({
