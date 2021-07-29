@@ -14,13 +14,17 @@
 
     <nav class="sidebar__nav">
         <a
-        *ngFor="let action of navLinks"
-        class="sidebar__nav-item"
-        [routerLink]="action.link"
-        routerLinkActive="is-active"
-        [routerLinkActiveOptions]="{ exact: true }">
+            *ngFor="let action of navLinks"
+            class="sidebar__nav-item"
+            [class.is-disabled]="action.comingSoon"
+            [routerLink]="!action.comingSoon ? action.link : ''"
+            routerLinkActive="is-active"
+            [routerLinkActiveOptions]="{ exact: true }">
         <mat-icon class="sidebar__icon">{{ action.icon }}</mat-icon>
         {{ action.label | translate }}
+        <span *ngIf="action.comingSoon" class="sidebar__disabled-label">
+            {{ 'NAVIGATION.COMING_SOON' | translate }}
+        </span>
     </a>
     </nav>
 </div>

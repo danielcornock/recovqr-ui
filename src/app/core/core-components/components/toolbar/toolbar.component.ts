@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { DashboardRoutes } from 'src/app/features/dashboard/constants/dashboard-routes.constants';
 import { Maybe } from 'src/types/maybe.type';
+import { NavigationOptions } from '../../constants/navigation-items.constant';
 
 @Component({
   selector: 'app-toolbar',
@@ -21,23 +21,10 @@ export class ToolbarComponent implements OnInit {
   @Output()
   public logOut = new EventEmitter<void>();
 
-  public navLinks: Array<{ link: string, label: string }>;
+  public navLinks: Array<{ link: string, label: string, comingSoon?: boolean }>;
 
   public ngOnInit(): void {
-    this.navLinks = [
-      {
-        label: 'NAVIGATION.DASHBOARD',
-        link: DashboardRoutes.Root
-      },
-      {
-        label: 'NAVIGATION.EDIT_DETAILS',
-        link: `${DashboardRoutes.Root}/${DashboardRoutes.EditProfile}`
-      },
-      {
-        label: 'NAVIGATION.PREVIEW',
-        link: 'dashboard/preview'
-      }
-    ];
+    this.navLinks = NavigationOptions;
   }
 
   public toggleMenuOpen(): void {

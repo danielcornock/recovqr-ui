@@ -79,6 +79,22 @@ $mobile-breakpoint: 600px;
         & + & {
             margin-left: 8px;
         }
+
+        &.is-disabled {
+            background-color: transparent !important;
+            cursor: initial;
+        }
+    }
+
+    &__disabled-label {
+        background-color: rgba(black, 0.3);
+        margin-left: 8px;
+        color: white;
+        padding: 4px 8px;
+        line-height: 1;
+        font-size: 10px;
+        white-space: nowrap;
+        border-radius: $br-sm;
     }
 
     &__menu-button {

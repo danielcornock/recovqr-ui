@@ -16,10 +16,14 @@
         <a
             *ngFor="let action of navLinks"
             class="toolbar__nav-item"
-            [routerLink]="action.link"
+            [class.is-disabled]="action.comingSoon"
+            [routerLink]="!action.comingSoon ? action.link : ''"
             routerLinkActive="is-active"
             [routerLinkActiveOptions]="{ exact: true }">
             {{ action.label | translate }}
+            <span *ngIf="action.comingSoon" class="toolbar__disabled-label">
+                {{ 'NAVIGATION.COMING_SOON' | translate }}
+            </span>
         </a>
     </nav>
     <!-- Non-mobile only end -->

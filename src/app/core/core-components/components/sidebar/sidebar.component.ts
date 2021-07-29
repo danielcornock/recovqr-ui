@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { DashboardRoutes } from 'src/app/features/dashboard/constants/dashboard-routes.constants';
+import { NavigationOptions } from '../../constants/navigation-items.constant';
 
 @Component({
   selector: 'app-sidebar',
@@ -14,25 +14,9 @@ export class SidebarComponent implements OnInit {
   @Input()
   public userEmail: string;
 
-  public navLinks: Array<{ link: string, label: string, icon: string }>;
+  public navLinks: Array<{ link: string, label: string, icon: string, comingSoon?: boolean }>;
 
   public ngOnInit(): void {
-    this.navLinks = [
-      {
-        label: 'NAVIGATION.DASHBOARD',
-        link: DashboardRoutes.Root,
-        icon: 'qr_code_2'
-      },
-      {
-        label: 'NAVIGATION.EDIT_DETAILS',
-        link: `${DashboardRoutes.Root}/${DashboardRoutes.EditProfile}`,
-        icon: 'edit'
-      },
-      {
-        label: 'NAVIGATION.PREVIEW',
-        link: 'dashboard/preview',
-        icon: 'visibility'
-      }
-    ];
+    this.navLinks = NavigationOptions;
   }
 }
