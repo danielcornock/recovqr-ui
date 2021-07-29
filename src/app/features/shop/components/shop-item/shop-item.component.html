@@ -1,0 +1,22 @@
+<div class="shop-item__container">
+    <div class="shop-item__content">
+        <h3 class="shop-item__title">{{ shopItem.name }}</h3>
+        <p class="shop-item__description">{{ shopItem.description }}</p>
+
+        <div class="shop-item__select-section">
+            <mat-form-field class="shop-item__select">
+                <mat-label>{{ 'SHOP.LIST_PAGE.SELECT_QUANTITY' | translate }}</mat-label>
+                <mat-select [formControl]="quantityControl">
+                    <mat-option
+                        *ngFor="let option of shopItem.options"
+                        [value]="option.id">{{ option.quantity }} items, {{ option.price | currency:'£' }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+    
+            <button class="shop-item__cart-button" (click)="addToCart()">
+                {{ 'SHOP.LIST_PAGE.ADD_TO_BASKET' | translate }}
+                <mat-icon class="material-icons-outlined">shopping_cart</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>

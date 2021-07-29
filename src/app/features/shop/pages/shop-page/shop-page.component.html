@@ -1,0 +1,11 @@
+<div class="shop-page__container">
+    <section>
+        <h2>{{ 'SHOP.LIST_PAGE.TITLE' | translate }}</h2>
+        <p>{{ 'SHOP.LIST_PAGE.SUBTITLE' | translate }}</p>
+
+        <app-shop-item
+            *ngFor="let item of shopItems"
+            class="shop-page__item"
+            [shopItem]="item"></app-shop-item>
+    </section>
+</div>

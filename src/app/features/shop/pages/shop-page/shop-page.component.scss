@@ -1,0 +1,13 @@
+@import 'src/scss/theme';
+
+.shop-page {
+    &__item {
+        display: block;
+        margin-top: 32px;
+
+        & + & {
+            padding-top: 32px;
+            border-top: 1px solid $color-border-light;
+        }
+    }
+}

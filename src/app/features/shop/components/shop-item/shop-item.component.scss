@@ -1,0 +1,46 @@
+@import 'src/scss/theme';
+
+.shop-item {
+    &__container {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__title {
+        font-weight: 500;
+        color: $color-body-dark;
+        margin-bottom: 8px;
+    }
+
+    &__description {
+        color: $color-body;
+        font-weight: 300;
+        font-size: 12px;
+    }
+
+    &__select {
+        margin-bottom: 0;
+    }
+
+    &__cart-button {
+        border: 0;
+        background: $color-primary;
+        color: $color-text-on-primary;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        border-radius: $br-sm;
+        padding: 8px 12px;
+
+        mat-icon {
+            @include icon-size(16px);
+
+            display: block;
+            margin-left: 8px;
+        }
+
+        &:hover {
+            background-color: $color-primary-hover;
+        }
+    }
+}

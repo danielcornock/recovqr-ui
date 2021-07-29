@@ -2,7 +2,9 @@
     "NAVIGATION": {
         "DASHBOARD": "Dashboard",
         "EDIT_DETAILS": "Edit details",
-        "PREVIEW": "Preview"
+        "PREVIEW": "Preview",
+        "SHOP": "Shop",
+        "COMING_SOON": "Coming soon"
     },
     "PROFILE_MENU": {
         "LOG_OUT": "Log out"
@@ -105,5 +107,13 @@
     },
     "TABLE": {
         "EMPTY": "No entries"
+    },
+    "SHOP": {
+        "LIST_PAGE": {
+            "TITLE": "Order QR Stickers",
+            "SUBTITLE": "Get your own personal QR code as a high quality sticker pack that you can use to secure your belongings.",
+            "SELECT_QUANTITY": "Select quantity",
+            "ADD_TO_BASKET": "Add to basket"
+        }
     }
 }

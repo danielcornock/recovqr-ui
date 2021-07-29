@@ -1,4 +1,5 @@
 import { DashboardRoutes } from 'src/app/features/dashboard/constants/dashboard-routes.constant';
+import { environment } from 'src/environments/environment';
 
 export const NavigationOptions = [
   {
@@ -20,6 +21,6 @@ export const NavigationOptions = [
     label: 'NAVIGATION.SHOP',
     link: `${DashboardRoutes.Root}/${DashboardRoutes.Shop}`,
     icon: 'shopping_cart',
-    comingSoon: true
+    comingSoon: environment.production
   }
 ];
