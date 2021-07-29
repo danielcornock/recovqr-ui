@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/core/core-authentication/services/auth/auth.service';
 import { AuthQuery } from 'src/app/core/core-authentication/store/auth.query';
 import { ApiErrorResponse } from 'src/app/core/core-http/interfaces/api-error-response.interface';
-import { DashboardRoutes } from 'src/app/features/dashboard/constants/dashboard-routes.constants';
+import { DashboardRoutes } from 'src/app/features/dashboard/constants/dashboard-routes.constant';
 import { AuthRoutes } from '../../constants/auth-routes.constant';
 
 @Component({

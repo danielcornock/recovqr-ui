@@ -3,8 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/core-authentication/guards/auth/auth.guard';
 import { AuthenticatedPageContainerComponent } from './core/core-components/pages/authenticated-page-container/authenticated-page-container.component';
 import { AuthRoutes } from './features/auth/constants/auth-routes.constant';
-import { DashboardRoutes } from './features/dashboard/constants/dashboard-routes.constants';
+import { DashboardRoutes } from './features/dashboard/constants/dashboard-routes.constant';
 import { InformationRoutes } from './features/information/constants/information-routes.constant';
+import { ShopRoutes } from './features/shop/constants/shop-routes.constant';
 
 const routes: Routes = [
   {
@@ -24,6 +25,10 @@ const routes: Routes = [
       {
         path: DashboardRoutes.Root,
         loadChildren: () => import('./features/dashboard/dashboard.module').then((m) => m.DashboardModule)
+      },
+      {
+        path: `${DashboardRoutes.Root}/${ShopRoutes.Root}`,
+        loadChildren: () => import('./features/shop/shop.module').then((m) => m.ShopModule)
       },
       {
         path: '',

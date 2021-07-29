@@ -1,5 +1,6 @@
 export const DashboardRoutes = {
   Root: 'dashboard',
   EditProfile: 'edit-profile',
-  Preview: 'preview'
+  Preview: 'preview',
+  Shop: 'shop'
 };

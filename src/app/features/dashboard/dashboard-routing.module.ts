@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardRoutes } from './constants/dashboard-routes.constants';
+import { DashboardRoutes } from './constants/dashboard-routes.constant';
 
 const routes: Routes = [
   {
@@ -17,7 +17,6 @@ const routes: Routes = [
   {
     path: DashboardRoutes.Preview,
     loadChildren: () => import('./pages/preview-page/preview-page.module').then((m) => m.PreviewPageModule),
-
     data: { heading: 'NAVIGATION.PREVIEW' }
   }
 ];
